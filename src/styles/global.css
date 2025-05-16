@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+@theme {
+  --color-btn: oklch(0.72 0.19 65); /* Gold Drop (#df8800) */
+  --color-hvrbtn: oklch(0.64 0.19 65); /* Darker Gold (#bf6f00) */
+  --color-bghd: oklch(0.25 0.05 276); /* Navy Blue (#001065) */
+  --color-border: oklch(0.42 0.09 276); /* Blue Tint (#3d4a99) */
+  --color-bgtrng: oklch(0.98 0.01 95); /* Light Cream (#fff9f0) */
+  --color-cartu: oklch(1 0 0); /* White (#ffffff) */
+  --color-txtglp: oklch(0.23 0.01 0); /* Charcoal (#1f1f1f) */
+  --color-txtonnavy: oklch(0.95 0.01 95); /* Off White (#f2f2f2) */
+  --color-hilikcl: oklch(0.82 0.15 70); /* Soft Orange (#ffae42) */
+}
