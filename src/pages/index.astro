@@ -1,12 +1,12 @@
 ---
-import Homepage from "../pages/Homepage.astro";
-import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/react-components/Hero.jsx';
+import Qurban from '../components/react-components/Qurban.jsx';
+import Footer from '../components/react-components/Footer.jsx';
 ---
 
 <Layout>
-  <Homepage />
+    <Hero client:visible />
+    <Qurban client:visible />
+    <Footer client:visible />
 </Layout>
