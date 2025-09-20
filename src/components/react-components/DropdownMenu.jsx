@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Switch from "./Switch";
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
 const DropdownMenu = () => {
   const [open, setOpen] = useState(false);
@@ -43,18 +43,21 @@ const DropdownMenu = () => {
           ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
         aria-hidden={!open}
       >
-        <ul className="space-y-3 font-semibold text-base w-full">
-          <li className="hover:bg-cartu/10 mb-2 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+        <ul className="flex flex-col justify-between h-full font-semibold text-base w-full space-y-4">
+          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/tentang-kami">Tentang Kami</a>
           </li>
-          <li className="p-3 rounded-xl mb-2 hover:bg-cartu/10 transition-all duration-300">
+          <li className="p-3 rounded-xl hover:bg-cartu/10 transition-all duration-300">
             <details className="group">
               <summary className="cursor-pointer flex justify-between items-center">
                 Lembaga Pendidikan
-                <ChevronDown size={20} className="transition-transform duration-300 group-open:rotate-180" />
+                <ChevronDown
+                  size={20}
+                  className="transition-transform duration-300 group-open:rotate-180"
+                />
               </summary>
               <ul className="pl-4 space-y-2 mt-2 border-l-2 border-cartu/20">
-                <li className="hover:bg-cartu/10 mb-2 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+                <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
                   <a href="/raudhotul-athfal">Raudhotul Athfal</a>
                 </li>
                 <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
@@ -63,10 +66,10 @@ const DropdownMenu = () => {
               </ul>
             </details>
           </li>
-          <li className="hover:bg-cartu/10 mb-2 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/laporan">Laporan</a>
           </li>
-          <li className="hover:bg-cartu/10 mb-2 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/kontak">Kontak</a>
           </li>
         </ul>

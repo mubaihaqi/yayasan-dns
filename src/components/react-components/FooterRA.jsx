@@ -1,16 +1,16 @@
 import React from "react";
 
-export default function Footer() {
+export default function FooterRA() {
   return (
-    <footer className="bg-bghd text-cartu py-12 px-4 md:px-6 lg:px-24">
+    <footer className="bg-bghd text-cartu py-10 px-4 md:px-6 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">Yayasan DNS</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Raudhotul Athfal Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">Raudhotul Athfal</h3>
             <p className="text-cartu/80 mb-4">
-              Membangun generasi berkualitas melalui pendidikan yang berbasis
-              nilai-nilai islami.
+              Lembaga pendidikan anak usia dini (PAUD) yang berbasis nilai-nilai
+              islami.
             </p>
             <div className="flex space-x-4">
               <a
@@ -49,34 +49,16 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a
-                href="#"
-                className="text-cartu/80 hover:text-cartu transition-colors"
-              >
-                <span className="sr-only">YouTube</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Tautan Cepat</h4>
+            <h4 className="text-lg font-semibold mb-4">Tautan</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Beranda
@@ -84,7 +66,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/tentang-kami"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Tentang Kami
@@ -92,38 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Lembaga Pendidikan
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Laporan
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Kontak
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Programs */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Program</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
+                  href="/raudhotul-athfal"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Raudhotul Athfal
@@ -131,7 +82,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/pondok-pesantren"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Pondok Pesantren
@@ -139,18 +90,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/kontak"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
-                  Program Beasiswa
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Kegiatan Sosial
+                  Kontak
                 </a>
               </li>
             </ul>
@@ -180,7 +123,13 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
-                <span>Jl. Contoh No. 123, Kota, Provinsi 12345</span>
+                <span>
+                  Jl. KH. Hasyim Asyari No. 99A
+                  <br />
+                  Genteng, Banyuwangi
+                  <br />
+                  Jawa Timur, Indonesia
+                </span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -196,7 +145,7 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   ></path>
                 </svg>
-                <span>+62 123 4567 890</span>
+                <span>+62 821 4142 3737</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -212,15 +161,16 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   ></path>
                 </svg>
-                <span>info@yayasan-dns.or.id</span>
+                <span>info@yayasandns.org</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-cartu/20 mt-10 pt-6 text-center text-cartu/60">
+        <div className="border-t border-cartu/20 mt-8 pt-6 text-center text-cartu/60">
           <p>
-            &copy; {new Date().getFullYear()} Yayasan DNS. Hak Cipta Dilindungi.
+            &copy; {new Date().getFullYear()} Raudhotul Athfal Yayasan DNS. Hak
+            Cipta Dilindungi.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Qurban() {
   return (
@@ -14,19 +14,19 @@ export default function Qurban() {
           </h1>
           <p className="pt-2 pb-4 block lg:hidden text-center">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            autem fuga voluptatibus alias officiis natus minus labore ipsam quisquam
-            consectetur!...
+            autem fuga voluptatibus alias officiis natus minus labore ipsam
+            quisquam consectetur!...
           </p>
           <p className="py-2 lg:py-6 lg:block hidden text-start">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
-            voluptatem quos rem, nulla officia eius quidem nesciunt quis iusto quae
-            optio consectetur beatae. Debitis tempora ab dicta ipsam magnam cum
-            facilis. Voluptates sed officiis doloribus ullam amet dicta illo
-            reiciendis, sequi beatae quae ducimus sint, dolorum repellat rerum dolor
-            consectetur, itaque ad numquam eum. Numquam dolore vel ad nesciunt
-            necessitatibus voluptate fugit harum commodi suscipit consectetur
-            corporis sint debitis quia perferendis nam corrupti adipisci, repellat
-            excepturi provident! Cum, suscipit praesentium.
+            voluptatem quos rem, nulla officia eius quidem nesciunt quis iusto
+            quae optio consectetur beatae. Debitis tempora ab dicta ipsam magnam
+            cum facilis. Voluptates sed officiis doloribus ullam amet dicta illo
+            reiciendis, sequi beatae quae ducimus sint, dolorum repellat rerum
+            dolor consectetur, itaque ad numquam eum. Numquam dolore vel ad
+            nesciunt necessitatibus voluptate fugit harum commodi suscipit
+            consectetur corporis sint debitis quia perferendis nam corrupti
+            adipisci, repellat excepturi provident! Cum, suscipit praesentium.
           </p>
           <button className="btn bg-btn hover:bg-hvrbtn border-border rounded-full px-6 flex justify-between items-center gap-6 !py-6">
             Info Selengkapnya

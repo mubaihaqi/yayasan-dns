@@ -4,28 +4,18 @@ export default function useScrollPosition() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    let throttleTimer;
-    
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset);
     };
-    
-    const throttledUpdatePosition = () => {
-      if (throttleTimer) return;
-      
-      throttleTimer = setTimeout(() => {
-        updatePosition();
-        throttleTimer = null;
-      }, 100);
-    };
 
-    window.addEventListener("scroll", throttledUpdatePosition);
+    // Update on scroll without throttling for more responsive behavior
+    window.addEventListener("scroll", updatePosition);
 
+    // Update immediately on mount
     updatePosition();
 
     return () => {
-      window.removeEventListener("scroll", throttledUpdatePosition);
-      if (throttleTimer) clearTimeout(throttleTimer);
+      window.removeEventListener("scroll", updatePosition);
     };
   }, []);
 

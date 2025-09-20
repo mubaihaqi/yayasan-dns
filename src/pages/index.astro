@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/react-components/Hero.jsx';
-import Qurban from '../components/react-components/Qurban.jsx';
-import Footer from '../components/react-components/Footer.jsx';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/react-components/Navbar";
+import Hero from "../components/react-components/Hero.jsx";
+import Qurban from "../components/react-components/Qurban.jsx";
+import Footer from "../components/react-components/Footer.jsx";
 ---
 
 <Layout>
-    <Hero client:visible />
-    <Qurban client:visible />
-    <Footer client:visible />
+  <Hero client:visible />
+  <Qurban client:visible />
+  <Footer client:visible />
 </Layout>

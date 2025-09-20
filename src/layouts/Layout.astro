@@ -1,9 +1,10 @@
 ---
-import '../styles/global.css';
-import FloatingButtons from '../components/react-components/FloatingButtons.jsx';
-import ScrollSmootherInit from '../components/react-components/ScrollSmootherInit.jsx';
-import Navbar from '../components/react-components/Navbar.jsx';
+import "../styles/global.css";
+import FloatingButtons from "../components/react-components/FloatingButtons.jsx";
+import ScrollSmootherInit from "../components/react-components/ScrollSmootherInit.jsx";
+import Navbar from "../components/react-components/Navbar.jsx";
 ---
+
 <!doctype html>
 <html lang="id" class="">
   <head>
@@ -19,8 +20,9 @@ import Navbar from '../components/react-components/Navbar.jsx';
   </head>
   <body class="bg-color-background">
     <Navbar client:load />
-    <FloatingButtons client:load whatsappNumber="6282141423737" />
     <ScrollSmootherInit client:load />
+    <FloatingButtons client:load whatsappNumber="6282141423737" />
+    <!-- Only render wrapper structure if not on mobile -->
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <slot />

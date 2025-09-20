@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro";
+import SimpleFooter from "../components/react-components/SimpleFooter.jsx";
+---
+
+<Layout title="Yayasan DNS">
+  <slot />
+  <SimpleFooter client:load />
+</Layout>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+  }
+</style>

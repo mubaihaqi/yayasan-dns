@@ -7,9 +7,25 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 let smoother;
 
+// Function to detect mobile devices
+function isMobileDevice() {
+  return (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    ) ||
+    (typeof window !== "undefined" && window.innerWidth <= 768)
+  );
+}
+
 export function initScrollSmoother() {
   // Check if we're in the browser environment
   if (typeof window !== "undefined") {
+    // Disable ScrollSmoother on mobile devices
+    if (isMobileDevice()) {
+      console.log("ScrollSmoother disabled on mobile device");
+      return null;
+    }
+
     // Ensure DOM is ready
     if (document.readyState === "loading") {
       // DOM is still loading, wait for it to complete
@@ -35,10 +51,12 @@ function initializeSmoother() {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 2, // Reduced smoothness factor (0 to 2) - was causing lag
+      smooth: 1.2, // Reduced smoothness factor (0 to 2) - was causing lag
       effects: true, // Enable data-speed and data-lag attributes
       smoothTouch: 0.1, // Much smoother on touch devices
       normalizeScroll: true,
+      // Ignore fixed elements from the smoother effect
+      ignore: "[data-lag], nav", // Removed .fixed and .navbar from ignore list
     });
   } else {
     console.warn(
@@ -59,3 +77,6 @@ export function refreshScrollTrigger() {
     }, 100);
   }
 }
+
+// Export the mobile detection function for use in other components
+export { isMobileDevice };
