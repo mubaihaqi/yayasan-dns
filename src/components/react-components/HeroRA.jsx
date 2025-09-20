@@ -10,15 +10,15 @@ export default function HeroRA() {
 
   return (
     <div
-      className="hero min-h-[600px] lg:min-h-screen relative"
+      className="hero min-h-screen h-screen relative"
       style={{
         backgroundImage: "url(https://picsum.photos/1920/1080?random=1)",
       }}
     >
       <div className="hero-overlay bg-bghd/70"></div>
 
-      <div className="hero-content text-neutral-content text-center relative z-10">
-        <div className="max-w-3xl pt-20 lg:pt-24 gap-6 flex flex-col items-center">
+      <div className="hero-content text-neutral-content text-center relative z-10 flex items-center justify-center h-full">
+        <div className="max-w-3xl gap-6 flex flex-col items-center">
           <h1
             className={`transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight`}
           >
