@@ -1,11 +1,9 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import Navbar from "../components/react-components/Navbar.jsx";
+import LaporanSection from "../components/react-components/LaporanSection.jsx";
 ---
 
 <PageLayout>
-  <div class="container mx-auto pt-32 px-4">
-    <h1 class="text-4xl font-bold text-center">Laporan</h1>
-    <p class="text-center mt-4">Informasi laporan akan ditampilkan di sini.</p>
-  </div>
+  <LaporanSection client:visible />
 </PageLayout>

@@ -13,7 +13,8 @@ export default function SimpleFooter() {
           </div>
 
           <div className="flex flex-col items-center md:items-end">
-            <div className="flex space-x-4 mb-2">
+            {/* Social Media Links - Commented out */}
+            {/* <div className="flex space-x-4 mb-2">
               <a
                 href="#"
                 className="text-cartu/80 hover:text-cartu transition-colors"
@@ -68,7 +69,7 @@ export default function SimpleFooter() {
                   />
                 </svg>
               </a>
-            </div>
+            </div> */}
 
             <div className="text-cartu/60 text-sm">
               <p>Jl. KH. Hasyim Asyari No. 99A</p>
@@ -77,11 +78,12 @@ export default function SimpleFooter() {
           </div>
         </div>
 
-        <div className="border-t border-cartu/20 mt-6 pt-4 text-center text-cartu/60 text-sm">
+        {/* License/Copyright - Commented out */}
+        {/* <div className="border-t border-cartu/20 mt-6 pt-4 text-center text-cartu/60 text-sm">
           <p>
             &copy; {new Date().getFullYear()} Yayasan DNS. Hak Cipta Dilindungi.
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

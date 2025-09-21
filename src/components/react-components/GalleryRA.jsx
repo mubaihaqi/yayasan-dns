@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "./Carousel.jsx";
 
 const images = [
   "https://picsum.photos/800/600?random=2",
@@ -17,17 +18,7 @@ export default function GalleryRA() {
             Momen-momen berharga di Raudhotul Athfal Darun Nasihah.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((image, index) => (
-            <div key={index} className="overflow-hidden rounded-lg shadow-md">
-              <img
-                src={image}
-                alt={`Gallery Image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <Carousel images={images} />
       </div>
     </section>
   );

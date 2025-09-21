@@ -2,20 +2,20 @@ import React from "react";
 
 export default function FooterRA() {
   return (
-    <footer className="bg-bghd text-cartu py-10 px-4 md:px-6 lg:px-24">
+    <footer className="bg-blue-200 text-blue-800 py-10 px-4 md:px-6 lg:px-24 rounded-t-3xl">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Raudhotul Athfal Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">Raudhotul Athfal</h3>
-            <p className="text-cartu/80 mb-4">
+            <p className="text-blue-700 mb-4">
               Lembaga pendidikan anak usia dini (PAUD) yang berbasis nilai-nilai
               islami.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-cartu/80 hover:text-cartu transition-colors"
+                className="text-blue-700 hover:text-blue-900 transition-colors"
               >
                 <span className="sr-only">Facebook</span>
                 <svg
@@ -33,7 +33,7 @@ export default function FooterRA() {
               </a>
               <a
                 href="#"
-                className="text-cartu/80 hover:text-cartu transition-colors"
+                className="text-blue-700 hover:text-blue-900 transition-colors"
               >
                 <span className="sr-only">Instagram</span>
                 <svg
@@ -59,7 +59,7 @@ export default function FooterRA() {
               <li>
                 <a
                   href="/"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
+                  className="text-blue-700 hover:text-blue-900 transition-colors"
                 >
                   Beranda
                 </a>
@@ -67,7 +67,7 @@ export default function FooterRA() {
               <li>
                 <a
                   href="/tentang-kami"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
+                  className="text-blue-700 hover:text-blue-900 transition-colors"
                 >
                   Tentang Kami
                 </a>
@@ -75,7 +75,7 @@ export default function FooterRA() {
               <li>
                 <a
                   href="/raudhotul-athfal"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
+                  className="text-blue-700 hover:text-blue-900 transition-colors"
                 >
                   Raudhotul Athfal
                 </a>
@@ -83,7 +83,7 @@ export default function FooterRA() {
               <li>
                 <a
                   href="/pondok-pesantren"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
+                  className="text-blue-700 hover:text-blue-900 transition-colors"
                 >
                   Pondok Pesantren
                 </a>
@@ -91,7 +91,7 @@ export default function FooterRA() {
               <li>
                 <a
                   href="/kontak"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
+                  className="text-blue-700 hover:text-blue-900 transition-colors"
                 >
                   Kontak
                 </a>
@@ -102,7 +102,7 @@ export default function FooterRA() {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Kontak</h4>
-            <ul className="space-y-3 text-cartu/80">
+            <ul className="space-y-3 text-blue-700">
               <li className="flex items-start">
                 <svg
                   className="h-5 w-5 mr-2 mt-0.5"
@@ -167,7 +167,7 @@ export default function FooterRA() {
           </div>
         </div>
 
-        <div className="border-t border-cartu/20 mt-8 pt-6 text-center text-cartu/60">
+        <div className="border-t border-blue-300 mt-8 pt-6 text-center text-blue-600">
           <p>
             &copy; {new Date().getFullYear()} Raudhotul Athfal Yayasan DNS. Hak
             Cipta Dilindungi.

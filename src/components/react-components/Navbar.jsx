@@ -7,10 +7,10 @@ import { ChevronDown } from "lucide-react";
 export default function Navbar() {
   const scrollPosition = useScrollPosition();
 
-  const navbarClasses = `navbar justify-between  shadow-lg fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-300 ease-in-out ${
+  const navbarClasses = `navbar justify-between  shadow-lg fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-300 ease-in-out font-semibold ${
     scrollPosition > 30
-      ? "bg-bghd/90 backdrop-blur-md border-b border-border/30"
-      : "bg-gradient-to-r from-bghd/20 to-bgtrng/20 backdrop-blur-md border-b border-border/20"
+      ? "bg-background border-b border-primary/30"
+      : "bg-card/0 border-b border-primary/20"
   }`;
 
   return (
@@ -27,15 +27,15 @@ export default function Navbar() {
 
       <div className="navbar-center hidden md:flex">
         <ul
-          className={`md:inline-flex gap-1 xl:gap-3 items-center justify-between px-2 font-semibold text-sm md:text-base tracking-wide ${
-            scrollPosition <= 50 ? "text-txtonnavy" : "text-cartu"
+          className={`md:inline-flex gap-1 xl:gap-3 items-center justify-between px-2 text-sm md:text-base tracking-wide ${
+            scrollPosition > 30 ? "text-primary" : "text-card"
           }`}
         >
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition <= 50
-                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+              scrollPosition > 30
+                ? "hover:bg-primary/20 hover:text-primary text-primary"
+                : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/tentang-kami" className="px-1 md:px-1 lg:px-4 py-2">
@@ -44,9 +44,9 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 relative ${
-              scrollPosition <= 50
-                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+              scrollPosition > 30
+                ? "hover:bg-primary/20 hover:text-primary text-primary"
+                : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <details className="group">
@@ -58,26 +58,22 @@ export default function Navbar() {
                 />
               </summary>
               <ul
-                className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-2 min-w-[200px] transition-all duration-300 opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0 ${
-                  scrollPosition <= 50
-                    ? "bg-slate-100/80 border-slate-200/50"
-                    : "bg-bghd/80 border-cartu/20"
-                }`}
+                className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-2 min-w-[200px] transition-all duration-300 opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0 bg-card/80 border-primary/50`}
               >
                 <li
                   className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
-                    scrollPosition <= 50
-                      ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                      : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+                    scrollPosition > 30
+                      ? "hover:bg-primary/20 hover:text-primary text-primary"
+                      : "hover:bg-card/20 hover:text-card text-card"
                   }`}
                 >
                   <a href="/raudhotul-athfal">Raudhotul Athfal</a>
                 </li>
                 <li
                   className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
-                    scrollPosition <= 50
-                      ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                      : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+                    scrollPosition > 30
+                      ? "hover:bg-primary/20 hover:text-primary text-primary"
+                      : "hover:bg-card/20 hover:text-card text-card"
                   }`}
                 >
                   <a href="/pondok-pesantren">Pondok Pesantren</a>
@@ -87,9 +83,9 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition <= 50
-                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+              scrollPosition > 30
+                ? "hover:bg-primary/20 hover:text-primary text-primary"
+                : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/laporan" className="px-1 md:px-1 lg:px-4 py-2">
@@ -98,9 +94,9 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition <= 50
-                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+              scrollPosition > 30
+                ? "hover:bg-primary/20 hover:text-primary text-primary"
+                : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/artikel" className="px-1 md:px-1 lg:px-4 py-2">
@@ -109,9 +105,9 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition <= 50
-                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
-                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+              scrollPosition > 30
+                ? "hover:bg-primary/20 hover:text-primary text-primary"
+                : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/kontak" className="px-1 md:px-1 lg:px-4 py-2">
@@ -129,26 +125,16 @@ export default function Navbar() {
         {/* Search feature hidden as requested */}
         {/*
         <label
-          className={`input border-2 rounded-3xl focus:!ring-0 focus:!ring-transparent focus:!border-0 hidden lg:flex lg:!items-center transition-all duration-300 ${
-            scrollPosition <= 50
-              ? "bg-transparent border-border text-border placeholder-slate-800"
-              : "bg-cartu/20 border-cartu text-cartu placeholder-cartu/70"
-          }`}
+          className={`input border-2 rounded-3xl focus:!ring-0 focus:!ring-transparent focus:!border-0 hidden lg:flex lg:!items-center transition-all duration-300 bg-transparent border-primary text-primary placeholder-primary/70`}
         >
           <input
             type="search"
-            className={`grow border-0 focus:ring-0 bg-transparent py-2 px-4 ${
-              scrollPosition <= 50
-                ? "text-border placeholder-slate-800"
-                : "text-cartu placeholder-cartu/70"
-            }`}
+            className={`grow border-0 focus:ring-0 bg-transparent py-2 px-4 text-primary placeholder-primary/70`}
             placeholder="Search"
             autoComplete="off"
           />
           <svg
-            className={`w-5 h-5 ${
-              scrollPosition <= 50 ? "text-border" : "text-cartu"
-            }`}
+            className={`w-5 h-5 text-primary`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

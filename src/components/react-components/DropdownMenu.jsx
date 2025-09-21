@@ -1,11 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import Switch from "./Switch";
-import { ChevronDown, Info, School, BookOpen, FileText, Mail } from "lucide-react";
+import useScrollPosition from "../../hooks/useScrollPosition.jsx";
+import {
+  ChevronDown,
+  Info,
+  School,
+  BookOpen,
+  FileText,
+  Mail,
+} from "lucide-react";
 
 const DropdownMenu = () => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(); // untuk sidebar
   const buttonRef = useRef(); // untuk tombol
+  const scrollPosition = useScrollPosition();
 
   // Tutup sidebar jika klik di luar
   useEffect(() => {
@@ -19,9 +28,21 @@ const DropdownMenu = () => {
         setOpen(false);
       }
     };
+
+    // Mencegah scrolling saat menu terbuka
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      // Pastikan scrolling kembali normal saat komponen di-unmount
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   return (
     <>
@@ -39,20 +60,21 @@ const DropdownMenu = () => {
       {/* Sidebar */}
       <div
         ref={menuRef}
-        className={`fixed top-[109px] right-0 h-auto w-[320px] md:w-[400px] bg-bghd/90 backdrop-blur-2xl text-cartu shadow-2xl transition-all duration-500 ease-in-out z-40 border-l border-border/30 py-6 px-4 rounded-l-2xl
-          ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+        className={`fixed top-[109px] right-0 h-auto w-[320px] md:w-[400px] backdrop-blur-md shadow-2xl transition-all duration-500 ease-in-out z-40 border-l py-6 px-4 rounded-l-2xl
+          ${open ? "translate-x-0 opacity-100" : "translate-x-full"}
+          ${scrollPosition > 30 ? "bg-background border-primary/30 text-primary" : "bg-card/0 border-primary/50 text-card"}`}
         aria-hidden={!open}
       >
         <ul className="flex flex-col justify-between h-full font-semibold text-base w-full space-y-4">
-          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/tentang-kami" className="flex items-center">
               <Info size={20} className="mr-2" />
               Tentang Kami
             </a>
           </li>
-          <li className="p-3 rounded-xl hover:bg-cartu/10 transition-all duration-300">
+          <li className="p-3 rounded-xl hover:bg-primary/20 transition-all duration-300">
             <details className="group">
-              <summary className="cursor-pointer flex justify-between items-center">
+              <summary className="cursor-pointer flex justify-start items-center">
                 <School size={20} className="mr-2" />
                 Lembaga Pendidikan
                 <ChevronDown
@@ -60,14 +82,14 @@ const DropdownMenu = () => {
                   className="transition-transform duration-300 group-open:rotate-180"
                 />
               </summary>
-              <ul className="pl-4 space-y-2 mt-2 border-l-2 border-cartu/20">
-                <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+              <ul className="pl-4 space-y-2 mt-2 border-l-2 border-primary/20">
+                <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
                   <a href="/raudhotul-athfal" className="flex items-center">
                     <School size={20} className="mr-2" />
                     Raudhotul Athfal
                   </a>
                 </li>
-                <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+                <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
                   <a href="/pondok-pesantren" className="flex items-center">
                     <BookOpen size={20} className="mr-2" />
                     Pondok Pesantren
@@ -76,13 +98,13 @@ const DropdownMenu = () => {
               </ul>
             </details>
           </li>
-          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/laporan" className="flex items-center">
               <FileText size={20} className="mr-2" />
               Laporan
             </a>
           </li>
-          <li className="hover:bg-cartu/10 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/kontak" className="flex items-center">
               <Mail size={20} className="mr-2" />
               Kontak

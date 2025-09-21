@@ -15,26 +15,26 @@ export default function HeroRA() {
         backgroundImage: "url(https://picsum.photos/1920/1080?random=1)",
       }}
     >
-      <div className="hero-overlay bg-bghd/70"></div>
+      <div className="hero-overlay bg-blue-400/50"></div>
 
-      <div className="hero-content text-neutral-content text-center relative z-10 flex items-center justify-center h-full">
+      <div className="hero-content text-center relative z-10 flex items-center justify-center h-full">
         <div className="max-w-3xl gap-6 flex flex-col items-center">
           <h1
-            className={`transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight`}
+            className={`transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white`}
           >
             Raudhotul Athfal
             <br />
-            <span className="text-border">Darun Nasihah</span>
+            <span className="text-yellow-300">Darun Nasihah</span>
           </h1>
 
           <p
-            className={`transition-all duration-700 ease-out delay-150 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} text-xl md:text-2xl font-semibold tracking-wide text-cartu/90`}
+            className={`transition-all duration-700 ease-out delay-150 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} text-xl md:text-2xl font-semibold tracking-wide text-white`}
           >
             Mencetak Generasi Unggul & Berakhlak Qur'ani
           </p>
 
           <p
-            className={`transition-all duration-700 ease-out delay-300 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-8 font-medium text-base md:text-lg max-w-2xl leading-relaxed px-4 text-cartu/80`}
+            className={`transition-all duration-700 ease-out delay-300 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-8 font-medium text-base md:text-lg max-w-2xl leading-relaxed px-4 text-white`}
           >
             Pendidikan anak usia dini yang fokus pada pembentukan karakter
             Islami, hafalan Al-Qur'an, dan pengembangan kreativitas.
@@ -43,7 +43,7 @@ export default function HeroRA() {
           <div
             className={`transition-all duration-700 ease-out delay-500 ${isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
           >
-            <button className="btn bg-btn hover:bg-hvrbtn border-0 rounded-full px-8 py-3 text-base font-semibold transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 hover:shadow-lg">
+            <button className="btn bg-pink-500 hover:bg-pink-600 border-0 rounded-full px-8 py-3 text-base font-semibold transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 hover:shadow-lg text-white">
               Daftar Sekarang
             </button>
           </div>

@@ -3,11 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/react-components/Navbar";
 import Hero from "../components/react-components/Hero.jsx";
 import Qurban from "../components/react-components/Qurban.jsx";
+import BidangKegiatan from "../components/react-components/BidangKegiatan.jsx";
+import RaudhatulAthfalPreview from "../components/react-components/RaudhatulAthfalPreview.jsx";
+import SloganSection from "../components/react-components/SloganSection.jsx";
 import Footer from "../components/react-components/Footer.jsx";
 ---
 
 <Layout>
   <Hero client:visible />
   <Qurban client:visible />
+  <BidangKegiatan client:visible />
+  <RaudhatulAthfalPreview client:visible />
+  <SloganSection client:visible />
   <Footer client:visible />
 </Layout>

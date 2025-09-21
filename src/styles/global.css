@@ -1,24 +1,53 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
-@source "../../node_modules/flowbite";
 
 @theme {
-  --color-btn: oklch(0.72 0.19 65); /* Gold Drop (#df8800) */
-  --color-hvrbtn: oklch(0.64 0.19 65); /* Darker Gold (#bf6f00) */
-  --color-bghd: oklch(0.25 0.05 276); /* Navy Blue (#001065) */
-  --color-border: oklch(0.42 0.09 276); /* Blue Tint (#3d4a99) */
-  --color-bgtrng: oklch(0.98 0.01 95); /* Light Cream (#fff9f0) */
-  --color-cartu: oklch(1 0 0); /* White (#ffffff) */
-  --color-txtglp: oklch(0.23 0.01 0); /* Charcoal (#1f1f1f) */
-  --color-txtonnavy: oklch(0.95 0.01 95); /* Off White (#f2f2f2) */
-  --color-hilikcl: oklch(0.82 0.15 70); /* Soft Orange (#ffae42) */
+  --color-bg: oklch(98% 0.02 95); /* creamy ivory */
+  --color-card: oklch(96% 0.05 80); /* peach soft */
+  --color-border: oklch(75% 0.14 70); /* gold-orange soft */
+  --color-txt: oklch(30% 0.05 270); /* navy-dark blue */
+  --color-btn: oklch(70% 0.17 60); /* bright warm orange */
+  --color-btn-hvr: oklch(60% 0.19 55); /* deeper orange hover */
+  --color-ovrlayimg: oklch(30% 0.05 270 / 0.8); /* navy overlay 80% */
 }
 
 @layer utilities {
-  .bg-bghd {
-    background-color: var(--color-bghd);
+  .bg-background {
+    background-color: var(--color-bg);
+  }
+
+  .bg-card {
+    background-color: var(--color-card);
+  }
+
+  .text-primary {
+    color: var(--color-txt);
+  }
+
+  .text-btn {
+    color: var(--color-btn);
+  }
+
+  .border-primary {
+    border-color: var(--color-border);
+  }
+
+  .bg-button {
+    background-color: var(--color-btn);
+  }
+
+  .bg-button-hover {
+    background-color: var(--color-btn-hvr);
+  }
+
+  .bg-grid-texture {
+    background-image:
+      linear-gradient(45deg, transparent 49%, rgba(36, 44, 71, 0.05) 50%, transparent 51%),
+      linear-gradient(-45deg, transparent 49%, rgba(36, 44, 71, 0.05) 50%, transparent 51%),
+      radial-gradient(circle, rgba(36, 44, 71, 0.08) 1px, transparent 2px);
+    background-size: 70px 70px, 70px 70px, 35px 35px;
+    background-position: 0 0, 0 0, 0 0;
   }
 }
 
@@ -78,10 +107,10 @@ body {
   overflow-x: hidden;
   position: relative;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px),
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(36, 44, 71, 1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(36, 44, 71, 1) 2px, transparent 2px),
+    linear-gradient(rgba(36, 44, 71, 1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 44, 71, 1) 1px, transparent 1px);
   background-size:
     100px 100px,
     100px 100px,

@@ -12,7 +12,8 @@ export default function Footer() {
               Membangun generasi berkualitas melalui pendidikan yang berbasis
               nilai-nilai islami.
             </p>
-            <div className="flex space-x-4">
+            {/* Social Media Links - Commented out for now */}
+            {/* <div className="flex space-x-4">
               <a
                 href="#"
                 className="text-cartu/80 hover:text-cartu transition-colors"
@@ -67,24 +68,16 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
 
-          {/* Quick Links */}
-          <div>
+          {/* Quick Links - Hidden on mobile */}
+          <div className="hidden md:block">
             <h4 className="text-lg font-semibold mb-4">Tautan Cepat</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Beranda
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="/tentang-kami"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Tentang Kami
@@ -92,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/lembaga-pendidikan"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Lembaga Pendidikan
@@ -100,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/laporan"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Laporan
@@ -108,7 +101,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/artikel"
+                  className="text-cartu/80 hover:text-cartu transition-colors"
+                >
+                  Artikel
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/kontak"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Kontak
@@ -117,13 +118,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Programs */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Program</h4>
+          {/* Programs - Hidden on mobile */}
+          <div className="hidden md:block">
+            <h4 className="text-lg font-semibold mb-4">Lembaga Pendidikan</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/raudhotul-athfal"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Raudhotul Athfal
@@ -131,26 +132,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/pondok-pesantren"
                   className="text-cartu/80 hover:text-cartu transition-colors"
                 >
                   Pondok Pesantren
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Program Beasiswa
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cartu/80 hover:text-cartu transition-colors"
-                >
-                  Kegiatan Sosial
                 </a>
               </li>
             </ul>
@@ -180,7 +165,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
-                <span>Jl. Contoh No. 123, Kota, Provinsi 12345</span>
+                <span>Jl. Raya Siliragung No. 123, Kec. Siliragung, Kab. Banyuwangi, Jawa Timur 68489</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -196,7 +181,7 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   ></path>
                 </svg>
-                <span>+62 123 4567 890</span>
+                <span>+62 333 123456</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -218,11 +203,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-cartu/20 mt-10 pt-6 text-center text-cartu/60">
+        {/* License/Copyright - Commented out for now */}
+        {/* <div className="border-t border-cartu/20 mt-10 pt-6 text-center text-cartu/60">
           <p>
             &copy; {new Date().getFullYear()} Yayasan DNS. Hak Cipta Dilindungi.
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
