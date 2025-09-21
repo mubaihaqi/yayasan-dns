@@ -1,21 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function useScrollPosition() {
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
+  }
 
   useEffect(() => {
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset);
     };
 
-    // Update on scroll without throttling for more responsive behavior
-    window.addEventListener("scroll", updatePosition);
+    // Update with throttling to improve performance
+    const throttledUpdatePosition = throttle(updatePosition, 16); // ~60fps
+    
+    window.addEventListener("scroll", throttledUpdatePosition);
 
     // Update immediately on mount
     updatePosition();
 
     return () => {
-      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("scroll", throttledUpdatePosition);
     };
   }, []);
 

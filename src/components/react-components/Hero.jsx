@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="hero-content text-neutral-content text-center relative z-10 flex items-center justify-center h-full">
         <div className="max-w-3xl gap-6 flex flex-col items-center">
           <h1
-            className={`transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight`}
+            className={`transition-all duration-500 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight`}
           >
             Yayasan Darun Nasihah
             <br />
@@ -26,22 +26,21 @@ export default function Hero() {
           </h1>
 
           <p
-            className={`transition-all duration-700 ease-out delay-150 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} text-xl md:text-2xl font-semibold tracking-wide text-cartu/90`}
+            className={`transition-all duration-500 ease-out delay-150 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} text-xl md:text-2xl font-semibold tracking-wide text-cartu/90`}
           >
             Islami, Qur'ani, Rabbani
           </p>
 
           <p
-            className={`transition-all duration-700 ease-out delay-300 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-8 font-medium text-base md:text-lg max-w-2xl leading-relaxed px-4 text-cartu/80`}
+            className={`transition-all duration-500 ease-out delay-300 ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} mb-8 font-medium text-base md:text-lg max-w-2xl leading-relaxed px-4 text-cartu/80`}
           >
-            Kami memfokuskan diri dalam pembinaan mahasiswa khususnya dan
-            pembinaan umat secara umum.
+            Melahirkan lembaga pendidikan dan sosial yang bermutu dan berarti
           </p>
 
           <div
-            className={`transition-all duration-700 ease-out delay-500 ${isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+            className={`transition-all duration-500 ease-out delay-500 ${isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
           >
-            <button className="btn bg-btn hover:bg-hvrbtn border-0 rounded-full px-8 py-3 text-base font-semibold transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 hover:shadow-lg">
+            <button className="btn bg-btn hover:bg-hvrbtn border-0 rounded-full px-8 py-3 text-base font-semibold transition-all duration-200 ease-in-out transform hover:-translate-y-0.5 hover:shadow-lg">
               Lihat Selengkapnya
             </button>
           </div>

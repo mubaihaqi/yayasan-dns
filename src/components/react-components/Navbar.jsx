@@ -7,17 +7,11 @@ import { ChevronDown } from "lucide-react";
 export default function Navbar() {
   const scrollPosition = useScrollPosition();
 
-  // Debug logs
-  console.log("Navbar scrollPosition:", scrollPosition);
-  console.log("Navbar scrollPosition > 30:", scrollPosition > 30);
-
-  const navbarClasses = `navbar justify-between shadow-lg fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-24 py-3 transition-all duration-500 ease-in-out ${
+  const navbarClasses = `navbar justify-between  shadow-lg fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-300 ease-in-out ${
     scrollPosition > 30
       ? "bg-bghd/90 backdrop-blur-md border-b border-border/30"
-      : "bg-gradient-to-r from-bghd/20 to-bgtrng/20 backdrop-blur-lg border-b border-border/20"
+      : "bg-gradient-to-r from-bghd/20 to-bgtrng/20 backdrop-blur-md border-b border-border/20"
   }`;
-
-  console.log("Navbar classes:", navbarClasses);
 
   return (
     <div className={navbarClasses}>
@@ -25,15 +19,15 @@ export default function Navbar() {
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={logoDns.src}
-            className="h-14 md:h-16 aspect-[1/1] transition-transform duration-300 hover:scale-105"
+            className="h-20 aspect-square transition-transform duration-300 hover:scale-105"
             alt="DNS Logo"
           />
         </a>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul
-          className={`lg:inline-flex gap-1 md:gap-3 items-center justify-between px-2 font-semibold text-sm md:text-base tracking-wide ${
+          className={`md:inline-flex gap-1 xl:gap-3 items-center justify-between px-2 font-semibold text-sm md:text-base tracking-wide ${
             scrollPosition <= 50 ? "text-txtonnavy" : "text-cartu"
           }`}
         >
@@ -44,7 +38,7 @@ export default function Navbar() {
                 : "hover:bg-cartu/30 hover:text-cartu text-cartu"
             }`}
           >
-            <a href="/tentang-kami" className="px-4 py-2">
+            <a href="/tentang-kami" className="px-1 md:px-1 lg:px-4 py-2">
               Tentang Kami
             </a>
           </li>
@@ -56,7 +50,7 @@ export default function Navbar() {
             }`}
           >
             <details className="group">
-              <summary className="relative px-4 py-2 cursor-pointer list-none flex items-center">
+              <summary className="relative px-1 md:px-1 lg:px-4 py-2 cursor-pointer list-none flex items-center">
                 Lembaga Pendidikan
                 <ChevronDown
                   size={16}
@@ -71,7 +65,7 @@ export default function Navbar() {
                 }`}
               >
                 <li
-                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-4 py-2 transform hover:translate-x-1 ${
+                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
                     scrollPosition <= 50
                       ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
                       : "hover:bg-cartu/30 hover:text-cartu text-cartu"
@@ -80,7 +74,7 @@ export default function Navbar() {
                   <a href="/raudhotul-athfal">Raudhotul Athfal</a>
                 </li>
                 <li
-                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-4 py-2 transform hover:translate-x-1 ${
+                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
                     scrollPosition <= 50
                       ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
                       : "hover:bg-cartu/30 hover:text-cartu text-cartu"
@@ -98,7 +92,7 @@ export default function Navbar() {
                 : "hover:bg-cartu/30 hover:text-cartu text-cartu"
             }`}
           >
-            <a href="/laporan" className="px-4 py-2">
+            <a href="/laporan" className="px-1 md:px-1 lg:px-4 py-2">
               Laporan
             </a>
           </li>
@@ -109,7 +103,18 @@ export default function Navbar() {
                 : "hover:bg-cartu/30 hover:text-cartu text-cartu"
             }`}
           >
-            <a href="/kontak" className="px-4 py-2">
+            <a href="/artikel" className="px-1 md:px-1 lg:px-4 py-2">
+              Artikel
+            </a>
+          </li>
+          <li
+            className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
+              scrollPosition <= 50
+                ? "hover:bg-txtonnavy/20 hover:text-border text-txtonnavy"
+                : "hover:bg-cartu/30 hover:text-cartu text-cartu"
+            }`}
+          >
+            <a href="/kontak" className="px-1 md:px-1 lg:px-4 py-2">
               Kontak
             </a>
           </li>
@@ -117,7 +122,7 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-end flex items-center justify-end gap-2 md:gap-4 w-auto">
-        <div className="dropdown lg:hidden">
+        <div className="dropdown md:hidden">
           <DropdownMenu />
         </div>
 

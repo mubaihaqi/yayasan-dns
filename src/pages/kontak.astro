@@ -4,17 +4,22 @@ import Map from "../components/react-components/Map.jsx";
 ---
 
 <PageLayout>
-  <div class="container mx-auto pt-32 px-4">
-    <h1 class="text-4xl font-bold text-center mb-12">Kontak</h1>
+  <div class="container mx-auto pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-bghd mb-4">Hubungi Kami</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Punya pertanyaan atau ingin berdiskusi? Jangan ragu untuk menghubungi kami melalui informasi di bawah ini atau kirim pesan langsung.
+      </p>
+    </div>
 
     <!-- Section 1: Kontak dan Pesan -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
       <!-- Box Kontak (Kiri) -->
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-6 text-bghd">Detail Kontak</h2>
-        <div class="space-y-4">
-          <div class="flex items-start">
-            <div class="bg-btn rounded-lg p-3 mr-4">
+      <div class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl">
+        <h2 class="text-2xl font-bold mb-8 text-bghd pb-2 border-b border-gray-100">Detail Kontak</h2>
+        <div class="space-y-6">
+          <div class="flex items-start group">
+            <div class="bg-btn rounded-xl p-4 mr-5 transition-all duration-300 group-hover:bg-hvrbtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 text-white"
@@ -31,13 +36,13 @@ import Map from "../components/react-components/Map.jsx";
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-lg">Telepon</h3>
-              <p class="text-gray-600">+62 821 4142 3737</p>
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">Telepon</h3>
+              <p class="text-gray-600 text-lg">+62 821 4142 3737</p>
             </div>
           </div>
 
-          <div class="flex items-start">
-            <div class="bg-btn rounded-lg p-3 mr-4">
+          <div class="flex items-start group">
+            <div class="bg-btn rounded-xl p-4 mr-5 transition-all duration-300 group-hover:bg-hvrbtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 text-white"
@@ -54,13 +59,13 @@ import Map from "../components/react-components/Map.jsx";
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-lg">Email</h3>
-              <p class="text-gray-600">info@yayasandns.org</p>
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">Email</h3>
+              <p class="text-gray-600 text-lg">info@yayasandns.org</p>
             </div>
           </div>
 
-          <div class="flex items-start">
-            <div class="bg-btn rounded-lg p-3 mr-4">
+          <div class="flex items-start group">
+            <div class="bg-btn rounded-xl p-4 mr-5 transition-all duration-300 group-hover:bg-hvrbtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 text-white"
@@ -82,10 +87,10 @@ import Map from "../components/react-components/Map.jsx";
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-lg">Alamat</h3>
-              <p class="text-gray-600">
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">Alamat</h3>
+              <p class="text-gray-600 text-lg leading-relaxed">
                 Jl. KH. Hasyim Asyari No. 99A<br />Genteng, Banyuwangi<br />Jawa
-                Timur, Indonesia
+                Timur, Indonesia 68432
               </p>
             </div>
           </div>
@@ -93,53 +98,53 @@ import Map from "../components/react-components/Map.jsx";
       </div>
 
       <!-- Box Pesan (Kanan) -->
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-6 text-bghd">Kirim Pesan</h2>
-        <form class="space-y-4">
+      <div class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl">
+        <h2 class="text-2xl font-bold mb-8 text-bghd pb-2 border-b border-gray-100">Kirim Pesan</h2>
+        <form class="space-y-6">
           <div>
             <label for="name" class="block text-gray-700 font-medium mb-2"
-              >Nama</label
+              >Nama Lengkap</label
             >
             <input
               type="text"
               id="name"
               name="name"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent"
-              placeholder="Masukkan nama Anda"
+              class="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent transition-all duration-300"
+              placeholder="Masukkan nama lengkap Anda"
               required
             />
           </div>
 
           <div>
             <label for="email" class="block text-gray-700 font-medium mb-2"
-              >Email</label
+              >Alamat Email</label
             >
             <input
               type="email"
               id="email"
               name="email"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent"
-              placeholder="Masukkan email Anda"
+              class="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent transition-all duration-300"
+              placeholder="Masukkan email aktif Anda"
               required
             />
           </div>
 
           <div>
             <label for="message" class="block text-gray-700 font-medium mb-2"
-              >Pesan</label
+              >Pesan Anda</label
             >
             <textarea
               id="message"
               name="message"
-              rows="5"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent"
+              rows="6"
+              class="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-btn focus:border-transparent transition-all duration-300"
               placeholder="Tulis pesan Anda di sini..."
               required></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full bg-btn hover:bg-hvrbtn text-white font-semibold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105"
+            class="w-full bg-btn hover:bg-hvrbtn text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
           >
             Kirim Pesan
           </button>
@@ -149,8 +154,15 @@ import Map from "../components/react-components/Map.jsx";
 
     <!-- Section 2: Map -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold mb-6 text-bghd text-center">Lokasi Kami</h2>
-      <Map client:load />
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold mb-3 text-bghd">Lokasi Kami</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Kunjungi kantor kami di lokasi berikut untuk diskusi langsung
+        </p>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <Map client:load />
+      </div>
     </div>
   </div>
 </PageLayout>
