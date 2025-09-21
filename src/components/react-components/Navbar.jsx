@@ -58,7 +58,7 @@ export default function Navbar() {
                 />
               </summary>
               <ul
-                className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-2 min-w-[200px] transition-all duration-300 opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0 bg-card/80 border-primary/50`}
+                className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-2 min-w-[200px] transition-all duration-300 opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0 bg-background border-primary/50`}
               >
                 <li
                   className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
