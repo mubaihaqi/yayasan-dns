@@ -81,7 +81,7 @@ export default function Navbar() {
               </ul>
             </details>
           </li>
-          <li
+          {/* <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
               scrollPosition > 30
                 ? "hover:bg-primary/20 hover:text-primary text-primary"
@@ -91,7 +91,7 @@ export default function Navbar() {
             <a href="/laporan" className="px-1 md:px-1 lg:px-4 py-2">
               Laporan
             </a>
-          </li>
+          </li>*/}
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
               scrollPosition > 30

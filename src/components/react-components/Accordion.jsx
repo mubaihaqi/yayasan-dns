@@ -8,21 +8,29 @@ const Accordion = ({ items }) => {
   };
 
   const renderedItems = items.map((item, index) => {
-    const active = index === activeIndex ? 'active' : '';
+    const active = index === activeIndex;
 
     return (
-      <div key={index} className="mb-4">
+      <div key={index} className="mb-3 rounded-xl overflow-hidden shadow-sm border border-primary/10 transition-all duration-300 hover:shadow-md">
         <div
-          className={`flex justify-between items-center p-4 bg-gray-100 cursor-pointer ${active ? 'rounded-t-lg' : 'rounded-lg'}`}
+          className={`flex justify-between items-center p-5 cursor-pointer bg-background transition-colors duration-300 ${
+            active ? 'bg-card border-b border-primary/20' : 'bg-background'
+          }`}
           onClick={() => onTitleClick(index)}
         >
-          <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-          <span>{active ? '-' : '+'}</span>
+          <h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+          <span className={`text-xl font-bold text-btn transition-transform duration-300 ${active ? 'rotate-45' : ''}`}>+</span>
         </div>
         <div
-          className={`p-4 bg-white border border-gray-200 text-gray-800 ${active ? 'block rounded-b-lg' : 'hidden'}`}
-          dangerouslySetInnerHTML={{ __html: item.content }}
-        ></div>
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            active ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div 
+            className="p-5 bg-white/50 text-primary leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: item.content }}
+          ></div>
+        </div>
       </div>
     );
   });

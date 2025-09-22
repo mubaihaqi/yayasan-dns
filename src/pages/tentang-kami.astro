@@ -1,68 +1,196 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import Navbar from "../components/react-components/Navbar.jsx";
 import Accordion from "../components/react-components/Accordion.jsx";
 import SloganSection from "../components/react-components/SloganSection.jsx";
 ---
 
 <PageLayout>
-  <div class="container mx-auto pt-32 px-4">
-    <h1 class="text-4xl font-bold text-center">Tentang Kami</h1>
-    <img
-      src="https://picsum.photos/1200/400" 
-      alt="Placeholder Image"
-      class="w-full h-64 object-cover rounded-lg my-8"
-    />
-    <Accordion
-      client:load
-      items={[
-        {
-          title: "Kata Pengantar",
-          content: (
-            `<p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>`
-          ),
-        },
-        {
-          title: "Identitas",
-          content: (
-            `<p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.
-            </p>`
-          ),
-        },
-        {
-          title: "Unit Lembaga",
-          content: (
-            `<p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur.
-            </p>`
-          ),
-        },
-        {
-          title: "Visi Misi",
-          content: (
-            `<p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.
-            </p>`
-          ),
-        },
-        {
-          title: "Program Kerja",
-          content: (
-            `<p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
-            </p>`
-          ),
-        },
-      ]}
-    />
+  <!-- Hero Section -->
+  <div class="relative pt-32 md:pt-42 md:pb-20 bg-card/50">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-card/30 to-background">
+      </div>
+      <div class="absolute inset-0 bg-grid-texture opacity-10"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-txt mb-4 tracking-tight"
+        >
+          Tentang <span
+            class="bg-txt bg-clip-text text-transparent tracking-normal leading-18"
+            >Yayasan Darunnasihah Siliragung</span
+          >
+        </h1>
+        <div
+          class="w-5/6 h-1 animate-pulse bg-btn mx-auto mb-4 mt-6 rounded-full"
+        >
+        </div>
+        <p
+          class="text-xl md:text-2xl text-txt/80 max-w-3xl mx-auto leading-relaxed"
+        >
+          Melahirkan lembaga pendidikan dan sosial yang bermutu dan berarti.
+        </p>
+      </div>
+    </div>
   </div>
+
+  <!-- Main Content -->
+  <main class="py-16 md:py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <!-- Image Section -->
+        <div
+          class="mb-16 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50 group"
+        >
+          <img
+            src="https://picsum.photos/seed/yayasan/1200/500"
+            alt="Gedung Yayasan Darunnasihah Siliragung"
+            class="w-full h-64 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+        <!-- Introduction -->
+        <div
+          class="mb-16 bg-card/50 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-border/20 shadow-lg text-center"
+        >
+          <p class="text-lg md:text-xl text-txt leading-relaxed font-medium">
+            Yayasan Darunnasihah Siliragung merupakan lembaga pendidikan yang
+            berkomitmen untuk membentuk generasi unggul yang berlandaskan
+            nilai-nilai Islam. Sejak berdiri, yayasan kami terus berinovasi
+            dalam memberikan pendidikan terbaik yang seimbang antara ilmu
+            pengetahuan umum dan pendalaman ilmu agama.
+          </p>
+        </div>
+
+        <!-- Accordion Section -->
+        <div class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-txt mb-4">
+              Informasi Lengkap Yayasan
+            </h2>
+            <div class="w-24 h-1 bg-border mx-auto rounded-full"></div>
+          </div>
+          <div class="accordion-container">
+            <Accordion
+              client:load
+              items={[
+                {
+                  title: "Kata Pengantar",
+                  content: `<div class="prose prose-lg max-w-none text-txt/80"><p class="mb-4">Assalamu'alaikum warahmatullahi wabarakatuh,</p><p>Puji syukur kami panjatkan ke hadirat Allah SWT, serta salawat dan salam semoga selalu tercurah kepada junjungan kita Nabi Muhammad SAW. Dengan mengharap ridha dan bimbingan-Nya, Yayasan Darunnasihah Siliragung hadir sebagai lembaga pendidikan yang berkomitmen membentuk generasi berkualitas, berakhlak mulia, dan siap menghadapi tantangan zaman.</p></div>`,
+                },
+                {
+                  title: "Identitas",
+                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                      <p><strong>Nama Yayasan:</strong> Darunnasihah Siliragung</p>
+                      <p><strong>Alamat:</strong> RT 03 / RW 01, Dusun Krajan, Desa Buluagung, Kecamatan Siliragung, Kabupaten Banyuwangi, Jawa Timur 68488</p>
+                      <p><strong>Tahun Berdiri:</strong> 2005</p>
+                      <p><strong>Status:</strong> Yayasan Swasta Terdaftar</p>
+                    </div>`,
+                },
+                {
+                  title: "Unit Lembaga",
+                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                      <p class="mb-3">Yayasan Darunnasihah Siliragung memiliki beberapa unit lembaga pendidikan:</p>
+                      <ul class="list-disc pl-5 space-y-2">
+                        <li>Raudhotul Athfal (RA) - Pendidikan Anak Usia Dini</li>
+                        <li>Pondok Pesantren - Pendidikan Dasar dan Menengah</li>
+                      </ul>
+                    </div>`,
+                },
+                {
+                  title: "Visi & Misi",
+                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                      <p class="font-bold text-txt mb-2">Visi:</p>
+                      <p class="mb-6 italic">"Menjadi lembaga pendidikan unggulan yang menghasilkan generasi berkualitas berlandaskan nilai-nilai Islam Ahlussunnah wal Jama'ah."</p>
+                      <p class="font-bold text-txt mb-2">Misi:</p>
+                      <ul class="list-disc pl-5 space-y-2">
+                        <li>Menyelenggarakan pendidikan berkualitas yang terintegrasi antara ilmu umum dan agama.</li>
+                        <li>Membentuk karakter dan akhlak mulia peserta didik sesuai teladan Rasulullah SAW.</li>
+                        <li>Mengembangkan kurikulum yang adaptif dan inovatif.</li>
+                        <li>Meningkatkan kesejahteraan dan profesionalisme guru serta karyawan.</li>
+                        <li>Menjalin kerjasama yang harmonis dengan orang tua dan masyarakat.</li>
+                      </ul>
+                    </div>`,
+                },
+                {
+                  title: "Program Kerja",
+                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                      <p class="mb-3">Yayasan Darunnasihah Siliragung menjalankan berbagai program kerja strategis:</p>
+                      <ul class="list-disc pl-5 space-y-2">
+                        <li>Peningkatan kualitas pendidikan dan metode pengajaran.</li>
+                        <li>Pengembangan sarana dan prasarana pendidikan yang modern dan representatif.</li>
+                        <li>Pembinaan minat dan bakat melalui kegiatan ekstrakurikuler.</li>
+                        <li>Program penguatan pendidikan karakter dan keaswajaan.</li>
+                        <li>Pengembangan sistem informasi manajemen pendidikan berbasis digital.</li>
+                        <li>Program beasiswa bagi siswa berprestasi dan kurang mampu.</li>
+                      </ul>
+                    </div>`,
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
   <SloganSection client:visible />
 </PageLayout>
+
+<style>
+  .accordion-container :global(.accordion-item) {
+    background-color: oklch(from var(--color-card) h c / 0.6);
+    border: 1px solid oklch(from var(--color-border) h c / 0.2);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .accordion-container :global(.accordion-item:last-child) {
+    margin-bottom: 0;
+  }
+  .accordion-container :global(.accordion-item:hover) {
+    border-color: oklch(from var(--color-border) h c / 0.5);
+    background-color: oklch(from var(--color-card) h c / 0.8);
+  }
+  .accordion-container :global(.accordion-title) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-txt);
+    cursor: pointer;
+    text-align: left;
+  }
+  .accordion-container :global(.accordion-title::after) {
+    content: "›";
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-btn);
+    transform: rotate(90deg);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .accordion-container
+    :global(.accordion-item[data-open="true"] .accordion-title::after) {
+    transform: rotate(-90deg);
+  }
+  .accordion-container :global(.accordion-content) {
+    overflow: hidden;
+    transition:
+      max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      padding 0.4s ease;
+    max-height: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .accordion-container
+    :global(.accordion-item[data-open="true"] .accordion-content) {
+    max-height: 1000px; /* Set a large enough value */
+    padding-bottom: 1.5rem;
+  }
+</style>

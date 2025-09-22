@@ -27,12 +27,15 @@ const RaudhatulAthfalPreview = () => {
                 Luk Luk Abdul Ghoniy
               </h2>
 
-              <p className="text-txt/80 mb-6 leading-relaxed">
-                Raudhatul Athfal Yayasan DNS merupakan lembaga pendidikan anak
-                usia dini (PAUD) yang berfokus pada pengembangan karakter dan
-                pemahaman dasar nilai-nilai islami. Kami mengedepankan
-                pendekatan holistik dalam mendidik anak-anak usia 3-6 tahun
-                dengan metode bermain sambil belajar yang menyenangkan.
+              <p className="text-txt/80 mb-6 leading-relaxed text-justify indent-6">
+                RA Luk Luk Abdul Ghoniy adalah lembaga pendidikan anak usia dini
+                (PAUD) yang berkomitmen menanamkan nilai-nilai Islami sejak
+                dini. Kami berfokus pada pembentukan karakter, akhlak mulia,
+                serta pemahaman dasar keislaman melalui pendekatan holistik yang
+                sesuai dengan tahap perkembangan anak usia 3–6 tahun. Dengan
+                metode belajar sambil bermain yang menyenangkan, RA Luk Luk
+                Abdul Ghoniy hadir untuk membimbing generasi muda agar tumbuh
+                menjadi pribadi yang cerdas, beriman, dan berakhlakul karimah.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-6">

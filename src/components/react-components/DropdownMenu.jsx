@@ -72,7 +72,7 @@ const DropdownMenu = () => {
               Tentang Kami
             </a>
           </li>
-          <li className="p-3 rounded-xl hover:bg-primary/20 transition-all duration-300">
+          <li className="p-3 rounded-xl pb-0 hover:bg-primary/20 transition-all duration-300">
             <details className="group">
               <summary className="cursor-pointer flex justify-start items-center">
                 <School size={20} className="mr-2" />
@@ -89,7 +89,7 @@ const DropdownMenu = () => {
                     Raudhotul Athfal
                   </a>
                 </li>
-                <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+                <li className="hover:bg-primary/20 p-3 pb0 rounded-xl transition-all duration-300 transform hover:translate-x-1">
                   <a href="/pondok-pesantren" className="flex items-center">
                     <BookOpen size={20} className="mr-2" />
                     Pondok Pesantren
@@ -98,12 +98,12 @@ const DropdownMenu = () => {
               </ul>
             </details>
           </li>
-          <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          {/* <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/laporan" className="flex items-center">
               <FileText size={20} className="mr-2" />
               Laporan
             </a>
-          </li>
+          </li>*/}
           <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/kontak" className="flex items-center">
               <Mail size={20} className="mr-2" />

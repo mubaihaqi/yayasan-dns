@@ -1,0 +1,120 @@
+.three-d-card {
+  width: 100%;
+  /*padding: 20px;*/
+  perspective: 1000px;
+}
+
+.three-d-card .card {
+  padding-top: 50px;
+  border: 3px solid var(--color-border);
+  transform-style: preserve-3d;
+  background:
+    linear-gradient(135deg, #0000 18.75%, var(--color-card) 0 31.25%, #0000 0),
+    repeating-linear-gradient(
+      45deg,
+      var(--color-card) -6.25% 6.25%,
+      var(--color-border) 0 18.75%
+    );
+  background-size: 60px 60px;
+  background-position:
+    0 0,
+    0 0;
+  background-color: var(--color-card);
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.three-d-card .card:hover {
+  background-position:
+    -100px 100px,
+    -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.three-d-card .content-box {
+  background: var(--color-bg);
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.three-d-card .content-box .card-title {
+  display: inline-block;
+  color: var(--color-txt);
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.three-d-card .content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.three-d-card .content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-txt);
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.three-d-card .content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.three-d-card .content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-txt);
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.three-d-card .content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.three-d-card .date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: var(--color-txt);
+  border: 1px solid var(--color-btn);
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.three-d-card .date-box span {
+  display: block;
+  text-align: center;
+}
+
+.three-d-card .date-box .month {
+  color: var(--color-btn);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.three-d-card .date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--color-btn);
+}
+
+/* Added for reverse effect */
+.three-d-card.reverse .card:hover {
+  transform: rotate3d(0.5, -1, 0, 30deg);
+}

@@ -124,11 +124,11 @@ export default function FooterRA() {
                   ></path>
                 </svg>
                 <span>
-                  Jl. KH. Hasyim Asyari No. 99A
+                  RT 03 / RW 01, Dusun Krajan, Desa Buluagung
                   <br />
-                  Genteng, Banyuwangi
+                  Kecamatan Siliragung, Kabupaten Banyuwangi
                   <br />
-                  Jawa Timur, Indonesia
+                  Jawa Timur 68488
                 </span>
               </li>
               <li className="flex items-center">
