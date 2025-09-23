@@ -16,7 +16,7 @@ import logoDns from "../assets/photos/logodnstrans.png";
     <title>YDNS | Siliragung</title>
   </head>
   <body class="bg-color-background">
-    <Navbar client:load />
+    <Navbar client:load currentPage={Astro.url.pathname} />
     <ScrollSmootherInit client:load />
     <FloatingButtons client:load whatsappNumber="6283168824889" />
     <!-- Only render wrapper structure if not on mobile -->

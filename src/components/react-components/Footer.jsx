@@ -21,23 +21,20 @@ export default function Footer() {
             <h4 className="text-xl font-bold mb-6 text-btn">Tautan Cepat</h4>
             <ul className="space-y-3">
               <li>
+                <a href="/" className="text-txtra/80 hover:text-btn-ra">
+                  Beranda
+                </a>
+              </li>
+              <li>
                 <a href="/tentang-kami" className="text-txt/80 hover:text-btn">
                   Tentang Kami
                 </a>
               </li>
-              <li>
-                <a
-                  href="/lembaga-pendidikan"
-                  className="text-txt/80 hover:text-btn"
-                >
-                  Lembaga Pendidikan
-                </a>
-              </li>
-              <li>
+              {/* <li>
                 <a href="/laporan" className="text-txt/80 hover:text-btn">
                   Laporan
                 </a>
-              </li>
+              </li>*/}
               <li>
                 <a href="/artikel" className="text-txt/80 hover:text-btn">
                   Artikel
@@ -59,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/raudhotul-athfal"
+                  href="/ra-lukluk-abdul-ghoni"
                   className="text-txt/80 hover:text-btn"
                 >
                   Raudhotul Athfal
@@ -101,7 +98,8 @@ export default function Footer() {
                   ></path>
                 </svg>
                 <span>
-                  RT 03 / RW 01, Dusun Krajan, Desa Buluagung, Kecamatan Siliragung, Kabupaten Banyuwangi, Jawa Timur 68488
+                  RT 03 / RW 01, Dusun Krajan, Desa Buluagung, Kecamatan
+                  Siliragung, Kabupaten Banyuwangi, Jawa Timur 68488
                 </span>
               </li>
               <li className="flex items-center">

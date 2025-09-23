@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import DropdownMenu from "./DropdownMenu.jsx";
 import logoDns from "../../assets/photos/logodnstrans.png";
+import logoRA from "../../assets/photos/logoratrans.png";
 import useScrollPosition from "../../hooks/useScrollPosition.jsx";
 import { ChevronDown } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ currentPage }) {
   const scrollPosition = useScrollPosition();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const navbarClasses = `navbar justify-between  shadow-lg fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-300 ease-in-out font-semibold ${
-    scrollPosition > 30
-      ? "bg-background border-b border-primary/30"
-      : "bg-card/0 border-b border-primary/20"
+    currentPage === "/ra-lukluk-abdul-ghoni"
+      ? scrollPosition > 30
+        ? "bg-bgra border-b border-borderra/30"
+        : "bg-cardra/0 border-b border-borderra/20"
+      : scrollPosition > 30
+        ? "bg-background border-b border-primary/30"
+        : "bg-card/0 border-b border-primary/20"
   }`;
 
   return (
@@ -18,9 +39,15 @@ export default function Navbar() {
       <div className="navbar-start">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
-            src={logoDns.src}
+            src={
+              currentPage === "/ra-lukluk-abdul-ghoni"
+                ? logoRA.src
+                : logoDns.src
+            }
             className="h-20 aspect-square transition-transform duration-300 hover:scale-105"
-            alt="DNS Logo"
+            alt={
+              currentPage === "/ra-lukluk-abdul-ghoni" ? "RA Logo" : "DNS Logo"
+            }
           />
         </a>
       </div>
@@ -28,14 +55,24 @@ export default function Navbar() {
       <div className="navbar-center hidden md:flex">
         <ul
           className={`md:inline-flex gap-1 xl:gap-3 items-center justify-between px-2 text-sm md:text-base tracking-wide ${
-            scrollPosition > 30 ? "text-primary" : "text-card"
+            currentPage === "/ra-lukluk-abdul-ghoni"
+              ? scrollPosition > 30
+                ? "text-txtra"
+                : "text-cardra"
+              : scrollPosition > 30
+                ? "text-primary"
+                : "text-card"
           }`}
         >
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition > 30
-                ? "hover:bg-primary/20 hover:text-primary text-primary"
-                : "hover:bg-card/20 hover:text-card text-card"
+              currentPage === "/ra-lukluk-abdul-ghoni"
+                ? scrollPosition > 30
+                  ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                  : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                : scrollPosition > 30
+                  ? "hover:bg-primary/20 hover:text-primary text-primary"
+                  : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/tentang-kami" className="px-1 md:px-1 lg:px-4 py-2">
@@ -44,48 +81,80 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 relative ${
-              scrollPosition > 30
-                ? "hover:bg-primary/20 hover:text-primary text-primary"
-                : "hover:bg-card/20 hover:text-card text-card"
+              currentPage === "/ra-lukluk-abdul-ghoni"
+                ? scrollPosition > 30
+                  ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                  : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                : scrollPosition > 30
+                  ? "hover:bg-primary/20 hover:text-primary text-primary"
+                  : "hover:bg-card/20 hover:text-card text-card"
             }`}
+            ref={dropdownRef}
           >
-            <details className="group">
-              <summary className="relative px-1 md:px-1 lg:px-4 py-2 cursor-pointer list-none flex items-center">
-                Lembaga Pendidikan
-                <ChevronDown
-                  size={16}
-                  className="ml-1 transition-transform duration-300 group-open:rotate-180"
-                />
-              </summary>
-              <ul
-                className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-2 min-w-[200px] transition-all duration-300 opacity-0 translate-y-2 group-open:opacity-100 group-open:translate-y-0 bg-background border-primary/50`}
+            <button
+              className="relative px-1 md:px-1 lg:px-4 py-2 cursor-pointer flex items-center bg-transparent border-none"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              aria-haspopup="true"
+              aria-expanded={isDropdownOpen}
+            >
+              Lembaga Pendidikan
+              <ChevronDown
+                size={16}
+                className={`ml-1 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <ul
+              className={`absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-40 min-w-[200px] transition-all duration-300 ${
+                isDropdownOpen
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8 pointer-events-none"
+              } ${
+                currentPage === "/ra-lukluk-abdul-ghoni"
+                  ? scrollPosition > 30
+                    ? "bg-bgra border-borderra/50"
+                    : "bg-cardra/0 border-cardra/20"
+                  : scrollPosition > 30
+                    ? "bg-background border-primary/50"
+                    : "bg-card/0 border-primary/20"
+              }`}
+            >
+              <li
+                className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
+                  currentPage === "/ra-lukluk-abdul-ghoni"
+                    ? scrollPosition > 30
+                      ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                      : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                    : scrollPosition > 30
+                      ? "hover:bg-primary/20 hover:text-primary text-primary"
+                      : "hover:bg-card/20 hover:text-card text-card"
+                }`}
               >
-                <li
-                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
-                    scrollPosition > 30
+                <a href="/ra-lukluk-abdul-ghoni">Raudhotul Athfal</a>
+              </li>
+              <li
+                className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
+                  currentPage === "/ra-lukluk-abdul-ghoni"
+                    ? scrollPosition > 30
+                      ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                      : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                    : scrollPosition > 30
                       ? "hover:bg-primary/20 hover:text-primary text-primary"
                       : "hover:bg-card/20 hover:text-card text-card"
-                  }`}
-                >
-                  <a href="/raudhotul-athfal">Raudhotul Athfal</a>
-                </li>
-                <li
-                  className={`rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
-                    scrollPosition > 30
-                      ? "hover:bg-primary/20 hover:text-primary text-primary"
-                      : "hover:bg-card/20 hover:text-card text-card"
-                  }`}
-                >
-                  <a href="/pondok-pesantren">Pondok Pesantren</a>
-                </li>
-              </ul>
-            </details>
+                }`}
+              >
+                <a href="/pondok-pesantren">Pondok Pesantren</a>
+              </li>
+            </ul>
           </li>
           {/* <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition > 30
-                ? "hover:bg-primary/20 hover:text-primary text-primary"
-                : "hover:bg-card/20 hover:text-card text-card"
+              currentPage === '/ra-lukluk-abdul-ghoni'
+                ? scrollPosition > 30
+                  ? "hover:bg-ra/20 hover:text-txtra text-txtra"
+                  : "hover:bg-card-ra/20 hover:text-ra text-ra"
+                : scrollPosition > 30
+                  ? "hover:bg-primary/20 hover:text-primary text-primary"
+                  : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/laporan" className="px-1 md:px-1 lg:px-4 py-2">
@@ -94,9 +163,13 @@ export default function Navbar() {
           </li>*/}
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition > 30
-                ? "hover:bg-primary/20 hover:text-primary text-primary"
-                : "hover:bg-card/20 hover:text-card text-card"
+              currentPage === "/ra-lukluk-abdul-ghoni"
+                ? scrollPosition > 30
+                  ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                  : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                : scrollPosition > 30
+                  ? "hover:bg-primary/20 hover:text-primary text-primary"
+                  : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/artikel" className="px-1 md:px-1 lg:px-4 py-2">
@@ -105,9 +178,13 @@ export default function Navbar() {
           </li>
           <li
             className={`rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 transform hover:-translate-y-0.5 ${
-              scrollPosition > 30
-                ? "hover:bg-primary/20 hover:text-primary text-primary"
-                : "hover:bg-card/20 hover:text-card text-card"
+              currentPage === "/ra-lukluk-abdul-ghoni"
+                ? scrollPosition > 30
+                  ? "hover:bg-txtra/20 hover:text-txtra text-txtra"
+                  : "hover:bg-cardra/20 hover:text-cardra text-cardra"
+                : scrollPosition > 30
+                  ? "hover:bg-primary/20 hover:text-primary text-primary"
+                  : "hover:bg-card/20 hover:text-card text-card"
             }`}
           >
             <a href="/kontak" className="px-1 md:px-1 lg:px-4 py-2">

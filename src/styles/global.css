@@ -10,6 +10,15 @@
   --color-btn: oklch(70% 0.17 60); /* bright warm orange */
   --color-btn-hvr: oklch(60% 0.19 55); /* deeper orange hover */
   --color-ovrlayimg: oklch(30% 0.05 270 / 0.8); /* navy overlay 80% */
+
+  /*palette khusus unutk halaman RA*/
+  --color-bgra: oklch(98% 0.02 120); /* soft ivory greenish, terang natural */
+  --color-cardra: oklch(96% 0.04 100); /* light warm green-cream */
+  --color-borderra: oklch(75% 0.12 135); /* medium green, senada logo */
+  --color-txtra: oklch(28% 0.06 150); /* hijau tua gelap */
+  --color-btnra: oklch(72% 0.15 70); /* orange-gold warm */
+  --color-btn-hvrra: oklch(62% 0.18 65); /* orange lebih gelap untuk hover */
+  --color-ovrlayimgra: oklch(28% 0.06 150 / 0.8); /* hijau tua transparan 80% */
 }
 
 @layer utilities {
@@ -41,13 +50,54 @@
     background-color: var(--color-btn-hvr);
   }
 
+  /* RA-specific color utilities */
+  .bg-ra {
+    background-color: var(--color-bgra);
+  }
+
+  .bg-card-ra {
+    background-color: var(--color-cardra);
+  }
+
+  .text-ra {
+    color: var(--color-txtra);
+  }
+
+  .border-ra {
+    border-color: var(--color-borderra);
+  }
+
+  .bg-button-ra {
+    background-color: var(--color-btnra);
+  }
+
+  .bg-button-hover-ra {
+    background-color: var(--color-btn-hvrra);
+  }
+
   .bg-grid-texture {
     background-image:
-      linear-gradient(45deg, transparent 49%, rgba(36, 44, 71, 0.05) 50%, transparent 51%),
-      linear-gradient(-45deg, transparent 49%, rgba(36, 44, 71, 0.05) 50%, transparent 51%),
+      linear-gradient(
+        45deg,
+        transparent 49%,
+        rgba(36, 44, 71, 0.05) 50%,
+        transparent 51%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 49%,
+        rgba(36, 44, 71, 0.05) 50%,
+        transparent 51%
+      ),
       radial-gradient(circle, rgba(36, 44, 71, 0.08) 1px, transparent 2px);
-    background-size: 70px 70px, 70px 70px, 35px 35px;
-    background-position: 0 0, 0 0, 0 0;
+    background-size:
+      70px 70px,
+      70px 70px,
+      35px 35px;
+    background-position:
+      0 0,
+      0 0,
+      0 0;
   }
 }
 

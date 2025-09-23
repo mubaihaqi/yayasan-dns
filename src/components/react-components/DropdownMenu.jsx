@@ -84,7 +84,7 @@ const DropdownMenu = () => {
               </summary>
               <ul className="pl-4 space-y-2 mt-2 border-l-2 border-primary/20">
                 <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
-                  <a href="/raudhotul-athfal" className="flex items-center">
+                  <a href="/ra-lukluk-abdul-ghoni" className="flex items-center">
                     <School size={20} className="mr-2" />
                     Raudhotul Athfal
                   </a>

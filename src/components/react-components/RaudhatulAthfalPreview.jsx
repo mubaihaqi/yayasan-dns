@@ -9,7 +9,7 @@ const RaudhatulAthfalPreview = () => {
             {/* Gambar */}
             <div className="md:w-2/5">
               <img
-                src="https://picsum.photos/seed/raudhotul-athfal/800/600"
+                src="https://picsum.photos/seed/ra-lukluk-abdul-ghoni/800/600"
                 alt="Raudhatul Athfal"
                 className="w-full h-full object-cover"
               />
@@ -111,7 +111,7 @@ const RaudhatulAthfalPreview = () => {
 
               <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                 <a
-                  href="/raudhotul-athfal"
+                  href="/ra-lukluk-abdul-ghoni"
                   className="btn group relative overflow-hidden border-0 rounded-full px-10 py-6 text-lg font-bold transition-all duration-200 ease-in-out transform hover:shadow-lg bg-btn text-white"
                 >
                   <span className="relative z-10">Selengkapnya</span>
