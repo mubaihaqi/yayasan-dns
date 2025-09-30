@@ -38,12 +38,15 @@ export default function Hero() {
           <div
             className={`transition-all duration-500 ease-out delay-500 ${isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
           >
-            <button className="btn group relative overflow-hidden border-0 rounded-full px-10 py-6 text-xl font-bold transition-all duration-200 ease-in-out transform hover:shadow-lg bg-btn text-white">
+            <a
+              href="/tentang-kami"
+              className="btn group relative overflow-hidden border-0 rounded-full px-10 py-6 text-xl font-bold transition-all duration-200 ease-in-out transform hover:shadow-lg bg-btn text-white"
+            >
               <span className="relative z-10 font-normal text-base uppercase">
                 Lihat Selengkapnya
               </span>
               <span className="absolute top-0 left-0 w-full h-full bg-btn-hvr transition-all duration-300 ease-in-out transform -translate-x-full group-hover:translate-x-0"></span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

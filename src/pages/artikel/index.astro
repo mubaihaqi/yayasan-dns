@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import articles from "../../data/articles.json";
+import "../../styles/contact-card.css";
+---
+
+<Layout>
+  <div class="h-[104px]"></div>
+  <div class="bg-background text-primary bg-grid-texture">
+    <div class="container mx-auto pt-4 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="text-center mt-4 md:mt-8 px-6 mb-8 md:mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+          Artikel Terbaru
+        </h1>
+        <p class="text-lg text-btn max-w-2xl mx-auto">
+          Temukan berbagai informasi dan pengetahuan terbaru seputar pendidikan,
+          sosial, dan keagamaan
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        {
+          articles.map((article) => (
+            <div class="card border border-primary/30 rounded-lg overflow-hidden hover:border-button transition-colors duration-300">
+              <a href={`/artikel/${article.slug}`} class="block group p-4">
+                <img
+                  src={article.img}
+                  alt={article.title}
+                  class="w-full h-48 object-cover rounded-lg mb-4 border border-primary/30"
+                />
+                <h2 class="text-xl font-semibold mb-3 text-primary group-hover:text-button transition-colors duration-300">
+                  {article.title}
+                </h2>
+                <div
+                  class="text-gray-600 text-sm mb-4 line-clamp-2"
+                  set:html={article.content.replace(/<[^>]*>?/gm, "")}
+                />
+                <p class="text-primary text-sm">
+                  Oleh: {article.author} | Sumber: {article.source}
+                </p>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

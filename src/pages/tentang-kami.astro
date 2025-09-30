@@ -1,44 +1,23 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import Accordion from "../components/react-components/Accordion.jsx";
 import SloganSection from "../components/react-components/SloganSection.jsx";
+import SimpleFooter from "../components/react-components/SimpleFooter.jsx";
 ---
 
-<PageLayout>
-  <!-- Hero Section -->
-  <div class="relative pt-32 md:pt-42 md:pb-20 bg-card/50">
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-card/30 to-background">
-      </div>
-      <div class="absolute inset-0 bg-grid-texture opacity-10"></div>
-    </div>
-
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-txt mb-4 tracking-tight"
-        >
-          Tentang <span
-            class="bg-txt bg-clip-text text-transparent tracking-normal leading-18"
-            >Yayasan Darunnasihah Siliragung</span
-          >
+<Layout>
+  <div class="h-[104px]"></div>
+  <div class="bg-background text-primary bg-grid-texture">
+    <div class="container mx-auto pt-4 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="text-center mt-4 md:mt-8 px-6 mb-8 md:mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+          Tentang Yayasan Darunnasihah Siliragung
         </h1>
-        <div
-          class="w-5/6 h-1 animate-pulse bg-btn mx-auto mb-4 mt-6 rounded-full"
-        >
-        </div>
-        <p
-          class="text-xl md:text-2xl text-txt/80 max-w-3xl mx-auto leading-relaxed"
-        >
+        <p class="text-lg text-btn max-w-2xl mx-auto">
           Melahirkan lembaga pendidikan dan sosial yang bermutu dan berarti.
         </p>
       </div>
-    </div>
-  </div>
 
-  <!-- Main Content -->
-  <main class="py-16 md:py-24 bg-background">
-    <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <!-- Image Section -->
         <div
@@ -55,7 +34,9 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
         <div
           class="mb-16 bg-card/50 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-border/20 shadow-lg text-center"
         >
-          <p class="text-lg md:text-xl text-txt leading-relaxed font-medium">
+          <p
+            class="text-lg md:text-xl text-primary leading-relaxed font-medium"
+          >
             Yayasan Darunnasihah Siliragung merupakan lembaga pendidikan yang
             berkomitmen untuk membentuk generasi unggul yang berlandaskan
             nilai-nilai Islam. Sejak berdiri, yayasan kami terus berinovasi
@@ -67,7 +48,7 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
         <!-- Accordion Section -->
         <div class="mb-16">
           <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-txt mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
               Informasi Lengkap Yayasan
             </h2>
             <div class="w-24 h-1 bg-border mx-auto rounded-full"></div>
@@ -78,11 +59,11 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
               items={[
                 {
                   title: "Kata Pengantar",
-                  content: `<div class="prose prose-lg max-w-none text-txt/80"><p class="mb-4">Assalamu'alaikum warahmatullahi wabarakatuh,</p><p>Puji syukur kami panjatkan ke hadirat Allah SWT, serta salawat dan salam semoga selalu tercurah kepada junjungan kita Nabi Muhammad SAW. Dengan mengharap ridha dan bimbingan-Nya, Yayasan Darunnasihah Siliragung hadir sebagai lembaga pendidikan yang berkomitmen membentuk generasi berkualitas, berakhlak mulia, dan siap menghadapi tantangan zaman.</p></div>`,
+                  content: `<div class="prose prose-lg max-w-none text-primary/80"><p class="mb-4">Assalamu'alaikum warahmatullahi wabarakatuh,</p><p>Puji syukur kami panjatkan ke hadirat Allah SWT, serta salawat dan salam semoga selalu tercurah kepada junjungan kita Nabi Muhammad SAW. Dengan mengharap ridha dan bimbingan-Nya, Yayasan Darunnasihah Siliragung hadir sebagai lembaga pendidikan yang berkomitmen membentuk generasi berkualitas, berakhlak mulia, dan siap menghadapi tantangan zaman.</p></div>`,
                 },
                 {
                   title: "Identitas",
-                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                  content: `<div class="prose prose-lg max-w-none text-primary/80">
                       <p><strong>Nama Yayasan:</strong> Darunnasihah Siliragung</p>
                       <p><strong>Alamat:</strong> RT 03 / RW 01, Dusun Krajan, Desa Buluagung, Kecamatan Siliragung, Kabupaten Banyuwangi, Jawa Timur 68488</p>
                       <p><strong>Tahun Berdiri:</strong> 2005</p>
@@ -91,7 +72,7 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
                 },
                 {
                   title: "Unit Lembaga",
-                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                  content: `<div class="prose prose-lg max-w-none text-primary/80">
                       <p class="mb-3">Yayasan Darunnasihah Siliragung memiliki beberapa unit lembaga pendidikan:</p>
                       <ul class="list-disc pl-5 space-y-2">
                         <li>Raudhotul Athfal (RA) - Pendidikan Anak Usia Dini</li>
@@ -101,10 +82,10 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
                 },
                 {
                   title: "Visi & Misi",
-                  content: `<div class="prose prose-lg max-w-none text-txt/80">
-                      <p class="font-bold text-txt mb-2">Visi:</p>
+                  content: `<div class="prose prose-lg max-w-none text-primary/80">
+                      <p class="font-bold text-primary mb-2">Visi:</p>
                       <p class="mb-6 italic">"Menjadi lembaga pendidikan unggulan yang menghasilkan generasi berkualitas berlandaskan nilai-nilai Islam Ahlussunnah wal Jama'ah."</p>
-                      <p class="font-bold text-txt mb-2">Misi:</p>
+                      <p class="font-bold text-primary mb-2">Misi:</p>
                       <ul class="list-disc pl-5 space-y-2">
                         <li>Menyelenggarakan pendidikan berkualitas yang terintegrasi antara ilmu umum dan agama.</li>
                         <li>Membentuk karakter dan akhlak mulia peserta didik sesuai teladan Rasulullah SAW.</li>
@@ -116,7 +97,7 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
                 },
                 {
                   title: "Program Kerja",
-                  content: `<div class="prose prose-lg max-w-none text-txt/80">
+                  content: `<div class="prose prose-lg max-w-none text-primary/80">
                       <p class="mb-3">Yayasan Darunnasihah Siliragung menjalankan berbagai program kerja strategis:</p>
                       <ul class="list-disc pl-5 space-y-2">
                         <li>Peningkatan kualitas pendidikan dan metode pengajaran.</li>
@@ -134,10 +115,11 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
   <SloganSection client:visible />
-</PageLayout>
+  <SimpleFooter client:visible />
+</Layout>
 
 <style>
   .accordion-container :global(.accordion-item) {
@@ -163,7 +145,7 @@ import SloganSection from "../components/react-components/SloganSection.jsx";
     padding: 1.25rem 1.5rem;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--color-txt);
+    color: var(--color-primary);
     cursor: pointer;
     text-align: left;
   }

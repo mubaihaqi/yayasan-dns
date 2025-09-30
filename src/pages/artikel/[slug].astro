@@ -1,6 +1,7 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import articles from "../../data/articles.json";
+import "../../styles/contact-card.css";
 
 export async function getStaticPaths() {
   return articles.map((article) => ({
@@ -12,34 +13,57 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 ---
 
-<PageLayout title={article.title}>
-  <div class="container mx-auto pt-32 px-4 pb-16">
-    <article class="bg-white rounded-xl shadow-lg p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 font-serif">
-      <div class="lg:col-span-3 border-r border-gray-200 pr-8 lg:pr-12">
-        <img
-          src={article.img}
-          alt={article.title}
-          class="w-full h-64 object-cover rounded-lg mb-8 border border-gray-100"
-        />
-        <h1 class="text-5xl font-bold mb-4 text-bghd leading-tight">{article.title}</h1>
-        <p class="text-gray-600 text-md mb-6 pb-4 border-b border-gray-200 font-medium">
+<Layout>
+  <div class="bg-background text-primary bg-grid-texture">
+    <div class="container mx-auto pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="text-center mt-4 md:mt-8 px-6 mb-8 md:mb-16">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+          {article.title}
+        </h1>
+        <p class="text-lg text-btn max-w-2xl mx-auto">
           Oleh: {article.author} | Sumber: {article.source}
         </p>
-        <div class="prose prose-xl max-w-none text-gray-700 leading-relaxed mt-8" set:html={article.content} />
       </div>
-      <aside class="lg:col-span-1 pt-8 lg:pt-0">
-        <h2 class="text-2xl font-bold mb-4 text-bghd border-b border-gray-200 pb-2">Artikel Lainnya</h2>
-        <ul class="space-y-6 mt-4">
-          {articles.slice(0, 3).map((relatedArticle) => (
-            <li>
-              <a href={`/artikel/${relatedArticle.slug}`} class="block p-3 rounded-lg hover:bg-gray-50 transition-colors duration-300 border border-gray-100">
-                <h3 class="font-semibold text-bghd hover:text-btn transition-colors duration-300 text-lg">{relatedArticle.title}</h3>
-                <p class="text-gray-500 text-sm line-clamp-2">{relatedArticle.content.replace(/<[^>]*>?/gm, '')}</p>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </aside>
-    </article>
+
+      <div class="card border border-primary/30 rounded-lg overflow-hidden">
+        <div class="article-content p-6 lg:p-8">
+          <img
+            src={article.img}
+            alt={article.title}
+            class="w-full h-64 md:h-96 object-cover rounded-lg mb-8 border border-primary/30"
+          />
+          
+          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed" set:html={article.content} />
+          
+          <!-- Related Articles Section -->
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <h2 class="text-2xl font-bold mb-6 text-primary">Artikel Lainnya</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articles
+                .filter(a => a.slug !== article.slug) // Exclude current article
+                .slice(0, 3)
+                .map((relatedArticle) => (
+                  <a 
+                    href={`/artikel/${relatedArticle.slug}`} 
+                    class="block p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300 border border-primary/30 hover:border-button group"
+                  >
+                    <img 
+                      src={relatedArticle.img} 
+                      alt={relatedArticle.title} 
+                      class="w-full h-40 object-cover rounded-md mb-3"
+                    />
+                    <h3 class="font-semibold text-primary group-hover:text-button transition-colors duration-300 text-lg mb-2">
+                      {relatedArticle.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-2">
+                      {relatedArticle.content.replace(/<[^>]*>?/gm, '').substring(0, 100)}...
+                    </p>
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</PageLayout>
+</Layout>

@@ -8,6 +8,7 @@ import {
   BookOpen,
   FileText,
   Mail,
+  Newspaper,
 } from "lucide-react";
 
 const DropdownMenu = () => {
@@ -66,7 +67,7 @@ const DropdownMenu = () => {
         aria-hidden={!open}
       >
         <ul className="flex flex-col justify-between h-full font-semibold text-base w-full space-y-4">
-          <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+          <li className="hover:bg-primary/20 p-3 mb-0 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/tentang-kami" className="flex items-center">
               <Info size={20} className="mr-2" />
               Tentang Kami
@@ -84,12 +85,15 @@ const DropdownMenu = () => {
               </summary>
               <ul className="pl-4 space-y-2 mt-2 border-l-2 border-primary/20">
                 <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
-                  <a href="/ra-lukluk-abdul-ghoni" className="flex items-center">
+                  <a
+                    href="/ra-lukluk-abdul-ghoni"
+                    className="flex items-center"
+                  >
                     <School size={20} className="mr-2" />
                     Raudhotul Athfal
                   </a>
                 </li>
-                <li className="hover:bg-primary/20 p-3 pb0 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+                <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
                   <a href="/pondok-pesantren" className="flex items-center">
                     <BookOpen size={20} className="mr-2" />
                     Pondok Pesantren
@@ -104,6 +108,12 @@ const DropdownMenu = () => {
               Laporan
             </a>
           </li>*/}
+          <li className="hover:bg-primary/20 p-3 mb-0 rounded-xl transition-all duration-300 transform hover:translate-x-1">
+            <a href="/artikel" className="flex items-center">
+              <Newspaper size={20} className="mr-2" />
+              Artikel
+            </a>
+          </li>
           <li className="hover:bg-primary/20 p-3 rounded-xl transition-all duration-300 transform hover:translate-x-1">
             <a href="/kontak" className="flex items-center">
               <Mail size={20} className="mr-2" />
