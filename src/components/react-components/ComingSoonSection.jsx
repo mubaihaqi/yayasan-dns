@@ -1,6 +1,6 @@
 import React from "react";
 
-const ComingSoonSection = () => {
+const ComingSoonSection = ({ title, description }) => {
   return (
     <div className="text-center px-4">
       <div className="mb-8">
@@ -21,11 +21,11 @@ const ComingSoonSection = () => {
           </svg>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-          Segera Hadir
+          {title || "Segera Hadir"}
         </h1>
         <p className="text-xl text-btn max-w-2xl mx-auto">
-          Halaman Pondok Pesantren sedang dalam pengembangan. Kami akan segera
-          memperbarui informasi terkini untuk Anda.
+          {description ||
+            "Halaman ini sedang dalam pengembangan. Kami akan segera memperbarui informasi terkini untuk Anda."}
         </p>
       </div>
 
