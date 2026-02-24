@@ -30,70 +30,33 @@ export default function Navbar({ currentPage }) {
     currentPage === "/" || currentPage === "/ra-lukluk-abdul-ghoni";
   const isTransparent = hasTransparentNav && scrollPosition <= 30;
 
-  // --- START: Kustomisasi Warna Navbar ---
-
-  // Mengontrol latar belakang dan border utama navbar.
-  const navbarClasses = `navbar justify-between shadow-lg fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-300 ease-in-out font-semibold ${
-    isRaPage // Cek jika ini halaman RA.
-      ? isTransparent // Jika ya, cek apakah navbar transparan (posisi di atas).
-        ? "bg-cardra/0 border-b border-borderra/20" // Tampilan untuk: Halaman RA, di atas.
-        : "bg-bgra border-b border-borderra/30" // Tampilan untuk: Halaman RA, setelah scroll.
-      : isTransparent // Jika bukan halaman RA, cek apakah transparan.
-        ? "bg-card/0 border-b border-primary/20" // Tampilan untuk: Halaman lain, di atas.
-        : "bg-background border-b border-primary/30" // Tampilan untuk: Halaman lain, setelah scroll.
+  const navbarClasses = `navbar justify-between fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-24 py-3 transition-all duration-200 font-semibold bg-background ${
+    isTransparent ? "border-b-2 border-transparent" : "border-b-2 border-primary"
   }`;
 
-  // Mengontrol warna teks untuk link navigasi.
-  const textClasses = isRaPage // Cek jika ini halaman RA.
-    ? isTransparent // Jika ya, cek apakah transparan.
-      ? "text-cardra" // Tampilan untuk: Halaman RA, di atas.
-      : "text-txtra" // Tampilan untuk: Halaman RA, setelah scroll.
-    : isTransparent // Jika bukan halaman RA, cek apakah transparan.
-      ? "text-card" // Tampilan untuk: Halaman lain, di atas.
-      : "text-primary"; // Tampilan untuk: Halaman lain, setelah scroll.
+  const textClasses = "text-primary";
 
-  // Mengontrol warna background dan teks saat tombol di-hover.
-  const buttonStyleClasses = `rounded-xl bg-transparent border-transparent shadow-none hover:shadow-md btn transition-all duration-300 ${
-    isRaPage // Cek jika ini halaman RA.
-      ? isTransparent // Jika ya, cek apakah transparan.
-        ? "hover:bg-cardra/20 hover:text-cardra" // Tampilan untuk: Halaman RA, di atas.
-        : "hover:bg-txtra/20 hover:text-txtra" // Tampilan untuk: Halaman RA, setelah scroll.
-      : isTransparent // Jika bukan halaman RA, cek apakah transparan.
-        ? "hover:bg-card/20 hover:text-card" // Tampilan untuk: Halaman lain, di atas.
-        : "hover:bg-primary/20 hover:text-primary" // Tampilan untuk: Halaman lain, setelah scroll.
-  }`;
+  const buttonStyleClasses = `rounded-full px-4 py-2 transition-all duration-200 border border-transparent hover:border-btn`;
 
-  // Mengontrol latar belakang dan border untuk menu dropdown.
-  const dropdownMenuClasses = `absolute p-3 backdrop-blur-xl border rounded-xl shadow-xl mt-40 min-w-[200px] transition-all duration-300 ${
+  const dropdownMenuClasses = `absolute p-2 border-2 rounded-2xl top-full mt-2 whitespace-nowrap transition-all duration-200 bg-background border-primary ${
     isDropdownOpen
       ? "opacity-100 translate-y-0"
-      : "opacity-0 translate-y-8 pointer-events-none"
-  } ${
-    isRaPage // Cek jika ini halaman RA.
-      ? isTransparent // Jika ya, cek apakah transparan.
-        ? "bg-cardra/0 border-cardra/20" // Tampilan untuk: Halaman RA, di atas.
-        : "bg-bgra border-borderra/50" // Tampilan untuk: Halaman RA, setelah scroll.
-      : isTransparent // Jika bukan halaman RA, cek apakah transparan.
-        ? "bg-card/0 border-primary/20" // Tampilan untuk: Halaman lain, di atas.
-        : "bg-background border-primary/50" // Tampilan untuk: Halaman lain, setelah scroll.
+      : "opacity-0 -translate-y-2 pointer-events-none"
   }`;
 
-  // Mengontrol warna background dan teks saat item dropdown di-hover.
-  const dropdownItemClasses = `rounded-lg bg-transparent border-transparent shadow-none btn transition-all duration-300 w-full text-left px-1 md:px-1 lg:px-4 py-2 transform hover:translate-x-1 ${
-    isRaPage // Cek jika ini halaman RA.
-      ? isTransparent // Jika ya, cek apakah transparan.
-        ? "hover:bg-cardra/20 hover:text-cardra" // Tampilan untuk: Halaman RA, di atas.
-        : "hover:bg-txtra/20 hover:text-txtra" // Tampilan untuk: Halaman RA, setelah scroll.
-      : isTransparent // Jika bukan halaman RA, cek apakah transparan.
-        ? "hover:bg-card/20 hover:text-card" // Tampilan untuk: Halaman lain, di atas.
-        : "hover:bg-primary/20 hover:text-primary" // Tampilan untuk: Halaman lain, setelah scroll.
-  }`;
-
-  // --- END: Kustomisasi Warna Navbar ---
+  const dropdownItemClasses = `block rounded-full transition-all duration-200 w-full text-left px-4 py-2 border border-transparent hover:border-btn`;
 
   return (
     <div className={navbarClasses}>
-      <div className="navbar-start">
+      {/* Paper texture - hanya muncul setelah scroll */}
+      {!isTransparent && (
+        <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px'
+        }}></div>
+      )}
+      
+      <div className="navbar-start relative z-10">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={isRaPage ? logoRA.src : logoDns.src}
@@ -103,23 +66,18 @@ export default function Navbar({ currentPage }) {
         </a>
       </div>
 
-      <div className="navbar-center hidden md:flex">
+      <div className="navbar-center hidden md:flex relative z-10">
         <ul
           className={`md:inline-flex gap-1 xl:gap-3 items-center justify-between px-2 text-sm md:text-base tracking-wide`}
         >
-          <li
-            className={`${buttonStyleClasses} ${textClasses} transform hover:-translate-y-0.5`}
-          >
-            <a href="/tentang-kami" className="px-1 md:px-1 lg:px-4 py-2">
+          <li className={`${textClasses}`}>
+            <a href="/tentang-kami" className={buttonStyleClasses}>
               Tentang Kami
             </a>
           </li>
-          <li
-            className={`${buttonStyleClasses} ${textClasses} relative`}
-            ref={dropdownRef}
-          >
+          <li className="relative" ref={dropdownRef}>
             <button
-              className="relative px-1 md:px-1 lg:px-4 py-2 cursor-pointer flex items-center bg-transparent border-none"
+              className={`${buttonStyleClasses} ${textClasses} flex items-center gap-1`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               aria-haspopup="true"
               aria-expanded={isDropdownOpen}
@@ -127,46 +85,43 @@ export default function Navbar({ currentPage }) {
               Lembaga Pendidikan
               <ChevronDown
                 size={16}
-                className={`ml-1 transition-transform duration-300 ${
+                className={`transition-transform duration-300 ${
                   isDropdownOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
             <ul className={dropdownMenuClasses}>
-              <li className={`${dropdownItemClasses} ${textClasses}`}>
-                <a href="/ra-lukluk-abdul-ghoni">Raudhotul Athfal</a>
+              <li>
+                <a href="/ra-lukluk-abdul-ghoni" className={`${dropdownItemClasses} ${textClasses}`}>
+                  Raudhotul Athfal
+                </a>
               </li>
-              <li className={`${dropdownItemClasses} ${textClasses}`}>
-                <a href="/pondok-pesantren">Pondok Pesantren</a>
+              <li>
+                <a href="/pondok-pesantren" className={`${dropdownItemClasses} ${textClasses}`}>
+                  Pondok Pesantren
+                </a>
               </li>
-              <li className={`${dropdownItemClasses} ${textClasses}`}>
-                <a href="/tpq-lukluk-abdul-ghoni">Taman Pendidikan Quran</a>
+              <li>
+                <a href="/tpq-lukluk-abdul-ghoni" className={`${dropdownItemClasses} ${textClasses}`}>
+                  Taman Pendidikan Quran
+                </a>
               </li>
             </ul>
           </li>
-          {/* <li className={`${buttonStyleClasses} ${textClasses} transform hover:-translate-y-0.5`}>
-            <a href="/laporan" className="px-1 md:px-1 lg:px-4 py-2">
-              Laporan
-            </a>
-          </li>*/}
-          <li
-            className={`${buttonStyleClasses} ${textClasses} transform hover:-translate-y-0.5`}
-          >
-            <a href="/artikel" className="px-1 md:px-1 lg:px-4 py-2">
+          <li className={`${textClasses}`}>
+            <a href="/artikel" className={buttonStyleClasses}>
               Artikel
             </a>
           </li>
-          <li
-            className={`${buttonStyleClasses} ${textClasses} transform hover:-translate-y-0.5`}
-          >
-            <a href="/kontak" className="px-1 md:px-1 lg:px-4 py-2">
+          <li className={`${textClasses}`}>
+            <a href="/kontak" className={buttonStyleClasses}>
               Kontak
             </a>
           </li>
         </ul>
       </div>
 
-      <div className="navbar-end flex items-center justify-end gap-2 md:gap-4 w-auto">
+      <div className="navbar-end flex items-center justify-end gap-2 md:gap-4 w-auto relative z-10">
         <div className="dropdown md:hidden">
           <DropdownMenu currentPage={currentPage} />
         </div>

@@ -11,59 +11,42 @@ const SloganSection = () => {
       }}
     >
       {/* Overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{ backgroundColor: "var(--color-ovrlayimg)" }}
-      ></div>
+      <div className="absolute inset-0 z-0 bg-ovrlayimg"></div>
 
-      <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <div className="text-center">
-          <h2
-            className="text-3xl leading-10 md:text-5xl text-bg lg:text-6xl font-bold mb-6 shadow-lg "
-            style={{ color: "var(--color-bg)" }}
-          >
-            Mari Berjuang
-            <br />
-            Bersama Kami!
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-background transition-transform duration-300">
+            Mari Berjuang Bersama Kami!
           </h2>
-          {/* <div
-            className="w-5/6 h-1 mx-auto mb-12 animate-pulse"
-            style={{ backgroundColor: "var(--color-border)", opacity: 0.5 }}
-          ></div>*/}
+        </div>
 
-          <div
-            className="relative backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 inline-block max-w-3xl"
-            style={{
-              backgroundColor: "oklch(from var(--color-card) h c / 0.1)",
-              borderColor: "oklch(from var(--color-border) h c / 0.2)",
-              borderWidth: "1px",
-            }}
-          >
-            <span
-              className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 text-9xl font-serif select-none"
-              style={{ color: "oklch(from var(--color-border) h c / 0.1)" }}
-            >
-              “
-            </span>
-            <blockquote
-              className="relative z-10 text-xl md:text-2xl lg:text-3xl font-medium italic leading-relaxed shadow-sm"
-              style={{ color: "var(--color-bg)" }}
-            >
-              "Barangsiapa yang menunjuki kepada kebaikan maka dia akan
-              mendapatkan pahala seperti pahala orang yang mengerjakannya"
+        <div className="relative max-w-4xl mx-auto">
+          {/* Speech bubble */}
+          <div className="relative bg-background rounded-3xl p-8 md:p-12 border-4 border-primary transition-transform duration-300 hover:scale-[1.02] overflow-hidden">
+            {/* Paper texture */}
+            <div className="absolute inset-0 opacity-[0.4] pointer-events-none" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              backgroundSize: '200px 200px'
+            }}></div>
+
+            <div className="absolute top-4 left-8 text-6xl md:text-7xl font-bold text-btn z-10" style={{ fontFamily: 'Georgia, serif' }}>
+              ❝
+            </div>
+
+            <blockquote className="relative z-10 text-xl md:text-2xl lg:text-3xl font-bold text-primary text-center leading-tight mb-4 px-8 md:px-12">
+              Barangsiapa yang menunjuki kepada kebaikan
+              <br />
+              maka dia akan mendapatkan pahala seperti pahala
+              <br className="block lg:hidden" /> orang yang mengerjakannya
             </blockquote>
-            <cite
-              className="relative z-10 block mt-6 text-lg md:text-xl font-semibold not-italic"
-              style={{ color: "var(--color-btn)" }}
-            >
-              (HR. Muslim)
+
+            <cite className="relative z-10 block text-lg md:text-xl font-bold not-italic text-btn text-center">
+              — HR. Muslim
             </cite>
-            <span
-              className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 text-9xl font-serif select-none"
-              style={{ color: "oklch(from var(--color-border) h c / 0.1)" }}
-            >
-              ”
-            </span>
+
+            <div className="absolute -bottom-0 right-10 text-6xl md:text-7xl font-bold text-btn z-10" style={{ fontFamily: 'Georgia, serif' }}>
+              ❞
+            </div>
           </div>
         </div>
       </div>

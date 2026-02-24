@@ -27,13 +27,14 @@ export default function FloatingButtons({ whatsappNumber }) {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-row items-center gap-3">
+    <div className="fixed bottom-5 right-5 z-50 flex flex-row items-center gap-2 md:gap-3">
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-amber-600 hover:bg-amber-700 text-white p-1.5 rounded-full shadow-lg transition-opacity duration-300 md:p-2"
+          className="relative bg-btn hover:text-primary text-white p-2 md:p-3 rounded-full border-2 border-primary transition-all duration-700 overflow-hidden group"
         >
-          <ArrowUp size={20} />
+          <ArrowUp size={20} className="relative z-10 md:size-6 transition-all duration-700 group-hover:-translate-y-1" />
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-background rounded-full opacity-0 transition-all duration-700 group-hover:w-[100px] group-hover:h-[100px] group-hover:opacity-100"></span>
         </button>
       )}
       <div className="relative flex items-center">
@@ -41,13 +42,13 @@ export default function FloatingButtons({ whatsappNumber }) {
           href={`https://wa.me/${whatsappNumber}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg md:p-3"
+          className="relative bg-green-500 hover:bg-green-600 text-white p-2 md:p-3 rounded-full border-2 border-primary transition-all duration-200 overflow-hidden group"
         >
-          <MessageCircle size={24} className="md:size-6" />
+          <MessageCircle size={20} className="relative z-10 md:size-6" />
         </a>
         <span
-          className="hidden md:block absolute -top-10 right-0 bg-white text-green-700 text-xs font-semibold px-2 py-1 rounded-lg shadow-lg whitespace-nowrap
-          after:content-[''] after:absolute after:top-full after:right-[14px] after:border-4 after:border-transparent after:border-t-white"
+          className="hidden md:block absolute -top-10 right-0 bg-background text-primary text-xs font-semibold px-3 py-1.5 rounded-full border-2 border-primary whitespace-nowrap
+          after:content-[''] after:absolute after:top-full after:right-[14px] after:border-4 after:border-transparent after:border-t-background"
         >
           Hubungi Kami
         </span>
